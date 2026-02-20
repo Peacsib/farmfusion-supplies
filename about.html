@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – FarmFusion Supplies | Zimbabwe's Trusted Agro-Retailer</title>
+  <meta name="description"
+    content="Learn about FarmFusion Supplies — a proudly Zimbabwean agro-retail business committed to farmers with quality feeds, seeds, fertilizers and veterinary products across 3 branches.">
+
+  <!-- Open Graph — absolute URLs -->
+  <meta property="og:title" content="About FarmFusion Supplies — Built on Trust">
+  <meta property="og:description"
+    content="Proudly Zimbabwean. Quality feeds at retail price. 3 branches serving Mashonaland farmers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://farmfusion.co.zw/about.html">
+  <meta property="og:image" content="https://farmfusion.co.zw/images/logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1a7f3c">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/enterprise-motion.css">
+  <link rel="stylesheet" href="assets/retail-micro.css">
+  <link rel="stylesheet" href="assets/luxury-agro.css">
+  
+  <!-- GSAP Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+  
+  <!-- Premium Scroll Animations -->
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo-banner" role="region" aria-label="Promotional offer">
+    <div class="container">
+      <div class="promo-badge">LIMITED OFFER</div>
+      <h3>FREE 24HR Delivery + UP TO 40% OFF</h3>
+      <p id="promoText">Order before 3PM for same-day delivery | Call: 071 558 2943</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="container header-container">
+      <div class="logo">
+        <img class="logo-mark" src="images/logo.webp" alt="FarmFusion Supplies">
+        <div class="logo-text">
+          <span class="logo-brand">FarmFusion<span>Supplies</span></span>
+          <div class="logo-tagline">All FEEDS @CHEAP PRICE</div>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Farm-themed side menu button (mobile only) -->
+      <button class="farm-menu-btn" id="farmMenuBtn" aria-label="Open farm navigation menu" aria-expanded="false">
+        <div class="farm-menu-icon">
+          <span class="farm-menu-bar"></span>
+          <span class="farm-menu-bar"></span>
+          <span class="farm-menu-bar"></span>
+          <div class="farm-menu-dot"></div>
+        </div>
+        <span class="farm-menu-label">Menu</span>
+      </button>
+      
+      <!-- Side Menu Overlay -->
+      <div class="side-menu-overlay" id="sideMenuOverlay" hidden></div>
+      
+      <!-- Farm-themed Side Menu -->
+      <nav class="farm-side-menu" id="farmSideMenu" role="navigation" aria-label="Farm navigation menu">
+        <div class="side-menu-header">
+          <div class="side-menu-logo">
+            <img src="images/logo.webp" alt="FarmFusion" class="side-menu-logo-img">
+            <div class="side-menu-logo-text">
+              <span class="side-menu-brand">FarmFusion</span>
+              <span class="side-menu-tagline">Your Feeds @Retail Price</span>
+            </div>
+          </div>
+          <button class="side-menu-close" id="sideMenuClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        
+        <div class="side-menu-content">
+          <div class="side-menu-farm-decor">
+            <div class="farm-icon-row">
+              <i class="fas fa-seedling"></i>
+              <i class="fas fa-tractor"></i>
+              <i class="fas fa-wheat-awn"></i>
+            </div>
+          </div>
+          
+          <ul class="side-menu-links">
+            <li class="side-menu-item">
+              <a href="index.html" class="side-menu-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="products.html" class="side-menu-link">
+                <i class="fas fa-boxes"></i>
+                <span>Products</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="about.html" class="side-menu-link">
+                <i class="fas fa-leaf"></i>
+                <span>About Us</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="contact.html" class="side-menu-link">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+          </ul>
+          
+          <div class="side-menu-divider">
+            <div class="divider-line"></div>
+            <span class="divider-text">Quick Actions</span>
+            <div class="divider-line"></div>
+          </div>
+          
+          <div class="side-menu-actions">
+            <a href="tel:+263780840505" class="side-menu-action">
+              <i class="fas fa-phone-alt"></i>
+              <span>Call Now</span>
+              <small>071 558 2943</small>
+            </a>
+            <a href="https://wa.me/263715582943" class="side-menu-action" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+              <small>Order via Chat</small>
+            </a>
+            <a href="products.html" class="side-menu-action">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Order Now</span>
+              <small>Browse Products</small>
+            </a>
+          </div>
+          
+          <div class="side-menu-footer">
+            <div class="farm-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>Quality Feeds. Thriving Farms.</p>
+              <i class="fas fa-quote-right"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+263780840505" class="phone-link">
+          <i class="fas fa-phone"></i> <span>071 558 2943</span>
+        </a>
+        <a href="products.html" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero" aria-labelledby="aboutHeroHeading">
+    <div class="container">
+      <h1 id="aboutHeroHeading">About FarmFusion Supplies</h1>
+      <p>A proudly Zimbabwean agro-retail business committed to supporting farmers with reliable, high-quality
+        agricultural inputs.</p>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="trust-section" aria-labelledby="whoWeAreHeading">
+    <div class="container">
+      <div class="bento-grid stagger-container">
+        <div class="bento-main fade-up">
+          <span class="hero-tag" style="background:#FFD700;color:var(--dark-green);">WHO WE ARE</span>
+          <h2 id="whoWeAreHeading">Built on Trust, Consistency &amp; Deep Understanding</h2>
+          <p>FarmFusion Supplies is a proudly Zimbabwean agro-retail business committed to supporting farmers with
+            reliable, high-quality agricultural inputs and solutions. We operate as a one-stop Order for essential
+            farming requirements.</p>
+          <p>Established with a clear purpose — to make genuine, effective, and affordable agricultural products easily
+            accessible to every farmer. We understand the daily challenges faced in crop and livestock production and we
+            show up consistently.</p>
+        </div>
+        <div class="bento-side">
+          <div class="promo-card">
+            <div class="promo-badge"><i class="fas fa-leaf"></i> Retail Feeds</div>
+            <h3 class="promo-title">YOUR FEEDS @RETAIL PRICE</h3>
+            <p class="promo-subtitle">Let's grow together — premium stockfeeds for every stage.</p>
+            <a class="btn btn-light btn-block" href="products.html">
+              Explore Feeds <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="promo-meta">
+              <span><i class="fas fa-truck"></i> Fast delivery</span>
+              <span><i class="fas fa-store"></i> Always in stock</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Branches -->
+  <section class="locations-section" aria-labelledby="branchesHeading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="branchesHeading">Our Branches</h2>
+        <p>Strategically located to serve farmers across Mashonaland</p>
+      </div>
+      <div class="branch-grid">
+
+        <div class="branch-card">
+          <div class="branch-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>FarmFusion Cross</h3>
+          <p>Order No. 1, AAA Complex at Giant Petroleum<br>Harare-Mutoko Highway</p>
+          <div class="location-hours">
+            Mon–Sat: 8:00AM – 5:00PM<br>Sunday: Closed
+          </div>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+            <a href="https://share.google/UEonhrZMyl51LXur0" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">Directions</a>
+            <a href="https://wa.me/263715582943" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="branch-card">
+          <div class="branch-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>FarmFusion Juru / Bhora</h3>
+          <p>Order No. 3, AAA Complex<br>Behind the unfinished Storey Building</p>
+          <div class="location-hours">
+            Mon–Sat: 8:00AM – 5:00PM<br>Sunday: Closed
+          </div>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+            <a href="https://maps.app.goo.gl/87tSYHBuXL7GL4aJA" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">Directions</a>
+            <a href="https://wa.me/263712065233" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="branch-card">
+          <div class="branch-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Murehwa Branch</h3>
+          <p>Main Street, Murehwa Centre</p>
+          <div class="location-hours">
+            Mon–Sat: 7:30AM – 5:30PM<br>Sunday: 8:00AM – 1:00PM
+          </div>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+            <a href="https://maps.app.goo.gl/Murehwa" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">Directions</a>
+            <a href="https://wa.me/263772123456" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer -->
+  <section class="trust-section" aria-labelledby="offerHeading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="offerHeading">What We Offer</h2>
+        <p>Everything your farm needs, under one roof</p>
+      </div>
+      <div class="about-grid">
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Quality stockfeeds for all
+          classes of livestock</div>
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Effective agrochemicals
+          for crop protection</div>
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Reliable fertilisers for
+          soil productivity</div>
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Certified seeds for
+          improved crop performance</div>
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Trusted veterinary
+          products for animal health</div>
+        <div class="offer-item"><span class="offer-check"><i class="fas fa-check"></i></span> Irrigation equipment and
+          farming spares</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="locations-section" aria-labelledby="vmHeading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="vmHeading">Vision &amp; Mission</h2>
+      </div>
+      <div class="vm-cards">
+        <div class="vm-card">
+          <h3>Our Vision</h3>
+          <p>To be the most trusted and accessible agro-retail partner for farmers across Zimbabwe.</p>
+        </div>
+        <div class="vm-card">
+          <h3>Our Mission</h3>
+          <p>To provide farmers with reliable agricultural inputs, expert support, and convenient access through our
+            growing branch network — at retail prices, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>FarmFusion Supplies</h3>
+          <p>Your trusted partner for agricultural success in Zimbabwe. Quality products, expert advice, reliable
+            service.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-phone"></i>
+              <div><strong>Phone</strong><br>
+                <a href="tel:+263780840505" style="color:#ddd;">071 558 2943</a>
+              </div>
+            </li>
+            <li><i class="fas fa-envelope"></i>
+              <div><strong>Email</strong><br>
+                <a href="mailto:info@farmfusion.co.zw" style="color:#ddd;">info@farmfusion.co.zw</a>
+              </div>
+            </li>
+            <li><i class="fas fa-map-marker-alt"></i>
+              <div><strong>Head Office</strong><br>
+                Order No. 1, AAA Complex at Giant Petroleum,<br>Cross, Harare-Mutoko Highway
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; <span id="currentYear">2024</span> FarmFusion Supplies. All rights reserved.
+          | Made with <i class="fas fa-heart" style="color:#ff4757;"></i> for Zimbabwean Farmers</p>
+        <p style="margin-top:10px;color:#FFD700;font-weight:600;">
+          YOUR FEEDS @RETAIL PRICE — Let's Grow Together!
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/263715582943?text=Hello%20FarmFusion,%20I%20need%20help%20with%20farming%20supplies"
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <div class="whatsapp-text">Order via WhatsApp</div>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="assets/enterprise-motion.js"></script>
+  <script src="assets/retail-micro.js"></script>
+  <script src="assets/luxury-agro.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+/* ===== RETAIL MICRO INTERACTION LAYER ===== */
+
+/* Nav link underline effect */
+.nav-links a {
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #2ecc71;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Button press feedback */
+button, .btn {
+    transition: transform 0.2s ease, box-shadow 0.15s ease;
+}
+button:active, .btn:active {
+    transform: scale(0.96);
+}
+
+/* WhatsApp float hover */
+.whatsapp-float {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 22px rgba(37, 211, 102, 0.5);
+}

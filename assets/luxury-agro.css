@@ -1,0 +1,47 @@
+/* ===== LUXURY AGRO BRAND MODE ===== */
+
+/* Cinematic hero depth overlay */
+.hero,
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+.hero::after,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.38));
+    pointer-events: none;
+    z-index: 0;
+}
+.hero .container,
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium typography rhythm */
+h1 { letter-spacing: -0.02em; line-height: 1.1; }
+h2 { letter-spacing: -0.01em; }
+
+/* Generous section breathing room */
+section {
+    padding-block: clamp(56px, 8vw, 108px);
+}
+
+/* Ultra-clean card aesthetic */
+.product-card,
+.card {
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* Premium sticky header feel */
+header {
+    transition: padding 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+header.shrink {
+    backdrop-filter: blur(14px);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+}

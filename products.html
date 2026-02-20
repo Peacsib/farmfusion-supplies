@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products – FarmFusion Supplies | Zimbabwe Agricultural Inputs</title>
+  <meta name="description"
+    content="Browse stockfeeds, fertilisers, veterinary products, seeds and agrochemicals. Retail prices, instant WhatsApp ordering, 24hr delivery across Mashonaland.">
+
+  <!-- Open Graph — absolute URLs -->
+  <meta property="og:title" content="FarmFusion Supplies — Full Product Catalogue">
+  <meta property="og:description"
+    content="Quality feeds for broilers, layers, road runners, pigs and rabbits. Browse products and order fast via WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://farmfusion.co.zw/products.html">
+  <meta property="og:image" content="https://farmfusion.co.zw/images/logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1a7f3c">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/enterprise-motion.css">
+  <link rel="stylesheet" href="assets/retail-micro.css">
+  <link rel="stylesheet" href="assets/luxury-agro.css">
+  
+  <!-- GSAP Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+  
+  <!-- Premium Scroll Animations -->
+  <script src="js/gsap-animations.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
+
+  <style>
+    /* Products page layout */
+    .filter-panel {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .filter-panel h3 {
+      margin-bottom: 15px;
+    }
+
+    .filter-group {
+      margin-bottom: 22px;
+    }
+
+    .filter-group h4 {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--dark-green);
+    }
+
+    .filter-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .filter-group input[type="checkbox"] {
+      accent-color: var(--primary-green);
+      width: 16px;
+      height: 16px;
+    }
+
+    .price-range {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .price-range input {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .price-range input:focus {
+      outline: 2px solid var(--primary-green);
+      border-color: transparent;
+    }
+
+    .filter-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 5px;
+    }
+
+    .products-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .products-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-panel {
+        position: static;
+      }
+    }
+
+    .featured-banner {
+      background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Category chips */
+    .category-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .chip {
+      padding: 8px 18px;
+      border: 2px solid var(--primary-green);
+      border-radius: 30px;
+      background: white;
+      color: var(--primary-green);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover,
+    .chip.active {
+      background: var(--primary-green);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo-banner" role="region" aria-label="Promotional offer">
+    <div class="container">
+      <div class="promo-badge">LIMITED OFFER</div>
+      <h3>FREE 24HR Delivery + UP TO 40% OFF</h3>
+      <p id="promoText">Order before 3PM for same-day delivery | Call: 071 558 2943</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="container header-container">
+      <div class="logo">
+        <img class="logo-mark" src="images/logo.webp" alt="FarmFusion Supplies" width="48" height="48">
+        <div class="logo-text">
+          <span class="logo-brand">FarmFusion<span>Supplies</span></span>
+          <div class="logo-tagline">All FEEDS @CHEAP PRICE</div>
+        </div>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Farm-themed side menu button (mobile only) -->
+      <button class="farm-menu-btn" id="farmMenuBtn" aria-label="Open farm navigation menu" aria-expanded="false">
+        <div class="farm-menu-icon">
+          <span class="farm-menu-bar"></span>
+          <span class="farm-menu-bar"></span>
+          <span class="farm-menu-bar"></span>
+          <div class="farm-menu-dot"></div>
+        </div>
+        <span class="farm-menu-label">Menu</span>
+      </button>
+      
+      <!-- Side Menu Overlay -->
+      <div class="side-menu-overlay" id="sideMenuOverlay" hidden></div>
+      
+      <!-- Farm-themed Side Menu -->
+      <nav class="farm-side-menu" id="farmSideMenu" role="navigation" aria-label="Farm navigation menu">
+        <div class="side-menu-header">
+          <div class="side-menu-logo">
+            <img src="images/logo.webp" alt="FarmFusion" class="side-menu-logo-img">
+            <div class="side-menu-logo-text">
+              <span class="side-menu-brand">FarmFusion</span>
+              <span class="side-menu-tagline">Your Feeds @Retail Price</span>
+            </div>
+          </div>
+          <button class="side-menu-close" id="sideMenuClose" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        
+        <div class="side-menu-content">
+          <div class="side-menu-farm-decor">
+            <div class="farm-icon-row">
+              <i class="fas fa-seedling"></i>
+              <i class="fas fa-tractor"></i>
+              <i class="fas fa-wheat-awn"></i>
+            </div>
+          </div>
+          
+          <ul class="side-menu-links">
+            <li class="side-menu-item">
+              <a href="index.html" class="side-menu-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="products.html" class="side-menu-link">
+                <i class="fas fa-boxes"></i>
+                <span>Products</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="about.html" class="side-menu-link">
+                <i class="fas fa-leaf"></i>
+                <span>About Us</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+            <li class="side-menu-item">
+              <a href="contact.html" class="side-menu-link">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+                <div class="side-menu-dot"></div>
+              </a>
+            </li>
+          </ul>
+          
+          <div class="side-menu-divider">
+            <div class="divider-line"></div>
+            <span class="divider-text">Quick Actions</span>
+            <div class="divider-line"></div>
+          </div>
+          
+          <div class="side-menu-actions">
+            <a href="tel:+263780840505" class="side-menu-action">
+              <i class="fas fa-phone-alt"></i>
+              <span>Call Now</span>
+              <small>071 558 2943</small>
+            </a>
+            <a href="https://wa.me/263715582943" class="side-menu-action" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+              <small>Order via Chat</small>
+            </a>
+            <a href="products.html" class="side-menu-action">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Order Now</span>
+              <small>Browse Products</small>
+            </a>
+          </div>
+          
+          <div class="side-menu-footer">
+            <div class="farm-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>Quality Feeds. Thriving Farms.</p>
+              <i class="fas fa-quote-right"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+263780840505" class="phone-link">
+          <i class="fas fa-phone"></i> <span>071 558 2943</span>
+        </a>
+        <a href="products.html" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Products Hero -->
+  <div class="products-hero">
+    <div class="container">
+      <div class="shona-hero">🌽 GOHO NDEREDU</div>
+      <h1>Complete Product Catalogue</h1>
+      <p>Every input your farm needs — stockfeeds, agrochemicals, fertilisers, seeds, veterinary &amp; spares.<br>
+        Retail prices, instant WhatsApp ordering.</p>
+    </div>
+  </div>
+
+  <!-- Feed Guides -->
+  <section aria-label="Feed guides" class="feed-guides">
+    <div class="container">
+      <div class="feed-guides-head">
+        <h2>Professional Feed Guides</h2>
+        <p class="muted">Comprehensive feeding guidelines based on industry best practices. For personalized recommendations tailored to your flock or herd, WhatsApp FarmFusion.</p>
+      </div>
+      <div class="feed-tabs" role="tablist" aria-label="Feed guide categories">
+        <button class="feed-tab active" data-tab="broiler" role="tab" aria-selected="true" type="button">Broiler</button>
+        <button class="feed-tab" data-tab="layers" role="tab" aria-selected="false" type="button">Layers</button>
+        <button class="feed-tab" data-tab="roadrunner" role="tab" aria-selected="false" type="button">Road Runner</button>
+        <button class="feed-tab" data-tab="pig" role="tab" aria-selected="false" type="button">Pig</button>
+        <button class="feed-tab" data-tab="rabbit" role="tab" aria-selected="false" type="button">Rabbit</button>
+        <button class="feed-tab" data-tab="goat" role="tab" aria-selected="false" type="button">Goat</button>
+      </div>
+      <div class="feed-panels">
+
+        <article class="feed-panel active" data-panel="broiler" id="tab-broiler" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Broiler Feed Program (0-42 Days)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Broilers require a three-phase feeding program for optimal growth and feed conversion ratio (FCR target: 1.55-1.70 by day 42).</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 1: Starter (Days 0-10)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Broiler Starter Crumbs</strong> – 22-24% protein, high energy (2,950-3,150 kcal/kg ME)</li>
+                <li><strong>Feed per bird:</strong> ~450g total over 10 days</li>
+                <li><strong>Key nutrients:</strong> Lysine, methionine for early muscle development</li>
+                <li><strong>Management:</strong> Ensure all chicks have feed in crops within 24 hours of placement</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 2: Grower (Days 11-24)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Broiler Grower Crumbs/Pellets</strong> – 18-21% protein, sustained energy</li>
+                <li><strong>Feed per bird:</strong> ~1.2kg total over grower phase</li>
+                <li><strong>Purpose:</strong> Continued muscle growth and skeletal development</li>
+                <li><strong>Options:</strong> Grower Concentrate (mix with maize for cost savings)</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 3: Finisher (Days 25-42)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Broiler Finisher Pellets</strong> – 16-18% protein, balanced for fat deposition</li>
+                <li><strong>Feed per bird:</strong> ~2.5kg total to market weight</li>
+                <li><strong>Value options:</strong> Broiler Value StarGrow & Grow-Fin for cost-effective finishing</li>
+                <li><strong>Total feed to market:</strong> Approximately 4kg per bird</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Provide clean, fresh water at all times. Water intake is 1.5-2x feed intake by weight.</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-01a7a866.png" alt="Broiler product bag examples" loading="lazy">
+              <figcaption>Broiler range: Starter, Grower, Finisher (packaging may vary)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feed-panel" data-panel="layers" id="tab-layers" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Layer Feed Program (Day-Old to Peak Production)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Layer chickens require precise nutrition for optimal egg production, strong eggshells, and sustained laying capacity.</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Chick Starter Phase (0-8 Weeks)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Chick Starter Mash</strong> – High protein for rapid early growth</li>
+                <li><strong>Feed per chick:</strong> ~2kg total over 8 weeks</li>
+                <li><strong>Management:</strong> Provide vitamins/electrolytes during vaccinations to prevent growth loss</li>
+                <li><strong>Target:</strong> Meet or exceed breed growth curve by 10%</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Phase (9-17 Weeks)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Growers Mash</strong> – Balanced nutrition for skeletal and organ development</li>
+                <li><strong>Feed per pullet:</strong> ~5kg total over grower phase</li>
+                <li><strong>Focus:</strong> Body weight management and flock uniformity</li>
+                <li><strong>Critical:</strong> Avoid stress; maintain consistent feeding schedule</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Pre-Lay/Developer (18-20 Weeks)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Layer Developer / Pre-Lay Mash</strong> – Transition diet before laying</li>
+                <li><strong>Purpose:</strong> Prepare reproductive system for egg production</li>
+                <li><strong>Key:</strong> Gradual transition to prevent digestive upset</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Production Phase (21+ Weeks)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Layers Mash Phase 1 & 2</strong> – 16-18% protein, 3.5%+ calcium for strong shells</li>
+                <li><strong>Feed per hen:</strong> ~110-120g per day during peak production</li>
+                <li><strong>Essential nutrients:</strong> Methionine, lysine for egg weight; calcium carbonate for shells</li>
+                <li><strong>Layers Concentrate:</strong> Mix with maize for economical feeding</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Inadequate calcium leads to weak shells. Ensure constant access to clean water—dehydration reduces egg production immediately.</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Layers feed product bags" loading="lazy">
+              <figcaption>Layers range: Starter, Grower, Developer, Production (packaging may vary)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feed-panel" data-panel="roadrunner" id="tab-roadrunner" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Road Runner Feed (Indigenous/Free-Range Poultry)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Road Runner chickens are Zimbabwe's indigenous breed, popular for their superior taste and adaptability to free-range systems. They thrive on natural foods supplemented with quality feed.</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Natural Diet Foundation</h4>
+              <ul class="feed-bullets">
+                <li><strong>Scavenging foods:</strong> Sorghum, rapoko (finger millet), maize, green vegetables</li>
+                <li><strong>Protein sources:</strong> Insects, lizards, worms (natural foraging)</li>
+                <li><strong>Benefits:</strong> Tougher, tastier meat; healthier birds; lower feed costs</li>
+                <li><strong>Growing demand:</strong> Popular with restaurants across Zimbabwe</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Supplemental Feed Program</h4>
+              <ul class="feed-bullets">
+                <li><strong>RR1 Starter</strong> – Energy and protein-rich for young chicks (day-old to 8 weeks)</li>
+                <li><strong>Feeding:</strong> Easy-to-digest feeds; provide variety for mineral/vitamin balance</li>
+                <li><strong>RR2 Grower/Finisher</strong> – Supports growth in free-range conditions (9 weeks to market)</li>
+                <li><strong>RR Breeder/Layer</strong> – For breeding flocks and laying hens</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Feeding Guidelines</h4>
+              <ul class="feed-bullets">
+                <li><strong>Amount:</strong> Approximately ½ cup (100-120g) per bird per day when supplementing</li>
+                <li><strong>Water:</strong> Must be available at all times</li>
+                <li><strong>Sunlight:</strong> Regular access essential for vitamin D and health</li>
+                <li><strong>Growth rate:</strong> Slower than broilers but superior meat quality</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Road Runners are excellent for smallholder farmers. Start with 1 rooster + 2 hens; expect 60+ birds within one year with proper management.</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-3d8c4e29.png" alt="Road Runner product bag examples" loading="lazy">
+              <figcaption>Road Runner range: RR1 Starter, RR2 Grower/Finisher, RR Breeder/Layer</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feed-panel" data-panel="pig" id="tab-pig" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Pig Feed Program (Birth to Market)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Pigs require age-appropriate nutrition at each growth stage. A growing pig eats approximately 4% of its body weight daily.</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Creep Phase (~1-4 Weeks)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Pig Creep Meal</strong> – Highly digestible, rich in protein and essential amino acids</li>
+                <li><strong>Feed per piglet:</strong> ~10kg total during creep phase</li>
+                <li><strong>Purpose:</strong> Support rapid growth, develop immune system, minimize post-weaning stress</li>
+                <li><strong>Critical:</strong> Feed quality and palatability paramount for developing digestive systems</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Weaner Phase (5kg-35kg Body Weight)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Pig Weaner Meal</strong> – 10-20% protein, 3,000-3,200 kcal/kg energy</li>
+                <li><strong>Feed per weaner:</strong> ~26kg total to reach 35kg body weight</li>
+                <li><strong>Daily intake:</strong> A 50-pound pig needs roughly 2 pounds (0.9kg) of feed</li>
+                <li><strong>Management:</strong> Ensure smooth transition from creep to weaner feed</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Phase (35kg-60kg)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Pig Grower Meal</strong> – 16% crude protein, 3,200 kcal DE</li>
+                <li><strong>Grower Concentrate</strong> – Mix 2 parts concentrate + 3 parts crushed maize by weight</li>
+                <li><strong>Purpose:</strong> Efficient weight gain and muscle development</li>
+                <li><strong>Calcium:Phosphorus ratio:</strong> Maintain 1:1 to 1.5:1 for bone health</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Finisher Phase (60kg to Market)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Grower/Finisher Meal</strong> – Day 57 to slaughter (typically 147 days)</li>
+                <li><strong>Feed per pig:</strong> ~225kg total by market weight</li>
+                <li><strong>Daily intake:</strong> A 200-pound pig needs about 8 pounds (3.6kg) daily</li>
+                <li><strong>Finisher Concentrate:</strong> Cost-effective option mixed with maize</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Breeding Stock</h4>
+              <ul class="feed-bullets">
+                <li><strong>Lactating Sow Meal</strong> – Base 2kg/day + 0.5kg per live piglet; ~3kg/day pre-farrowing</li>
+                <li><strong>Pig Boar & Sow</strong> – Maintenance ration for breeding stock (1-2kg per animal per day)</li>
+                <li><strong>Supplements:</strong> Provide legume hay (groundnut haulms, bean pods, cowpea residues)</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Zinc, copper, iron, manganese, and selenium support immunity and hoof health. Organic forms absorb better than inorganic minerals.</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Pig feed product bag examples" loading="lazy">
+              <figcaption>Pig range: Creep, Weaner, Grower, Finisher, Breeding (packaging may vary)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feed-panel" data-panel="rabbit" id="tab-rabbit" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Rabbit Feed Program (All Life Stages)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Rabbits require high-fiber diets with precise nutrient balance. A well-fed rabbit produces quality meat and maintains optimal health.</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Essential Nutritional Requirements</h4>
+              <ul class="feed-bullets">
+                <li><strong>Fiber:</strong> Minimum 14% (critical for digestive health and peristaltic action)</li>
+                <li><strong>Protein:</strong> Maximum 20% (excess can cause health issues)</li>
+                <li><strong>Fat:</strong> Maximum 5% (prevents obesity)</li>
+                <li><strong>Calcium:</strong> Maximum 1.1% (prevents urinary problems)</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Young Rabbits (0-6 Months)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Rabbit Starter</strong> – Alfalfa-based pellets, high in protein and calcium</li>
+                <li><strong>Purpose:</strong> Support rapid growth and bone development</li>
+                <li><strong>Ideal for:</strong> Young rabbits, pregnant does, nursing mothers</li>
+                <li><strong>Feeding:</strong> Unlimited pellets plus fresh hay</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Adult Rabbits (6+ Months)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Rabbit Pellets</strong> – Timothy hay-based, lower protein and calcium</li>
+                <li><strong>Daily amount:</strong> ¼ cup per 5 lbs body weight (high-fiber pellets)</li>
+                <li><strong>Hay:</strong> Unlimited high-quality grass hay (primary diet component)</li>
+                <li><strong>Greens:</strong> 1 cup fresh leafy greens per 2 lbs body weight</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Rabbits (Market Production)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Rabbit Grower</strong> – Balanced nutrition for efficient weight gain</li>
+                <li><strong>Feed intake:</strong> Approximately 2-4% of body weight daily</li>
+                <li><strong>Key nutrients:</strong> Methionine, lysine for muscle development</li>
+                <li><strong>Benefits:</strong> Improved digestion, reduced obesity risk</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Important Feeding Notes</h4>
+              <ul class="feed-bullets">
+                <li><strong>Water:</strong> Must be available at all times (critical for health)</li>
+                <li><strong>Avoid:</strong> Pellets with whole nuts, seeds, fruits (muesli-style)</li>
+                <li><strong>First ingredient:</strong> Should always be grass or hay</li>
+                <li><strong>Fiber source:</strong> Lignocellulose moves rapidly through colon as hard fecal pellets</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Rabbits practice cecotrophy (eating soft fecal pellets). This is normal and essential for nutrient absorption—don't prevent it!</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Rabbit feed product bags" loading="lazy">
+              <figcaption>Rabbit range: Starter, Grower, Adult Pellets (packaging may vary)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feed-panel" data-panel="goat" id="tab-goat" role="tabpanel">
+          <div class="feed-panel-grid">
+            <div>
+              <h3>Goat Feed Program (All Life Stages)</h3>
+              <p style="margin-bottom: 15px; color: #666;">Goats are ruminants with four-chambered stomachs. They are primarily browsers (prefer leaves and bushes) but also graze on grass.</p>
+              
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Core Nutritional Requirements</h4>
+              <ul class="feed-bullets">
+                <li><strong>Six essential nutrients:</strong> Proteins, carbohydrates, fats, vitamins, minerals, water</li>
+                <li><strong>Forage foundation:</strong> 70% of diet should be quality hay, browse, grasses, legumes</li>
+                <li><strong>Daily intake:</strong> 2-4 pounds of hay per 100 pounds body weight</li>
+                <li><strong>Water:</strong> Constant access essential (goats are sensitive to dehydration)</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Maintenance Feeding (Non-Productive)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Goat Feed - Maintenance</strong> – Minimum feed for non-growing, non-pregnant, non-lactating goats</li>
+                <li><strong>Amount:</strong> 1-2kg per animal per day</li>
+                <li><strong>Purpose:</strong> Maintain body weight and warmth</li>
+                <li><strong>Supplements:</strong> Legume hay (groundnut haulms, bean pods, cowpea residues)</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Growing Goats (Kids to Market)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Goat Feed - Nuts</strong> – Concentrated nutrition for growth</li>
+                <li><strong>Protein:</strong> Essential for muscle growth and development</li>
+                <li><strong>Energy:</strong> Carbohydrates provide fuel for daily activities</li>
+                <li><strong>Browse:</strong> Encourage natural browsing behavior for balanced nutrition</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Lactating Does (Milk Production)</h4>
+              <ul class="feed-bullets">
+                <li><strong>Daily intake:</strong> 3-5% of body weight in dry matter</li>
+                <li><strong>Example:</strong> 50kg doe producing milk needs up to 2.5kg dry feed daily</li>
+                <li><strong>Protein boost:</strong> Support milk production with quality protein sources</li>
+                <li><strong>Minerals:</strong> Free-choice loose minerals essential for lactation</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Forage & Browse Options</h4>
+              <ul class="feed-bullets">
+                <li><strong>Preferred:</strong> Leaves from trees and bushes (natural browsing)</li>
+                <li><strong>Grasses:</strong> Various grass types for grazing</li>
+                <li><strong>Legumes:</strong> High-protein options like groundnut haulms</li>
+                <li><strong>Crop residues:</strong> Bean pods, cowpea residues, maize stover</li>
+              </ul>
+
+              <h4 style="margin-top: 20px; color: var(--primary-green);">Year-Round Forage Planning</h4>
+              <ul class="feed-bullets">
+                <li><strong>Critical:</strong> Develop annual forage program for consistent feed availability</li>
+                <li><strong>Dry season:</strong> Store hay and crop residues</li>
+                <li><strong>Wet season:</strong> Maximize fresh browse and pasture</li>
+                <li><strong>Minerals:</strong> Provide free-choice minerals year-round</li>
+              </ul>
+
+              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Goats regurgitate and chew cud to break down cellulose. Ensure adequate fiber for proper rumen function and digestive health.</p>
+            </div>
+            <figure class="feed-figure">
+              <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Goat feed product bags" loading="lazy">
+              <figcaption>Goat range: Maintenance, Nuts (packaging may vary)</figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Sort Toolbar -->
+  <div class="shop-toolbar">
+    <div class="container shop-toolbar-inner">
+      <div class="search-wrap">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input id="shopSearch" class="shop-search" type="search" placeholder="Search feeds, seeds, agrochemicals…"
+          aria-label="Search products">
+      </div>
+      <select id="shopSort" class="shop-sort" aria-label="Sort products">
+        <option value="popular">Sort: Popular</option>
+        <option value="plh">Price: Low → High</option>
+        <option value="phl">Price: High → Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Category Chips -->
+  <div class="container" style="margin-top:20px;">
+    <div id="categoryChips" class="category-chips" aria-label="Filter by category"></div>
+  </div>
+
+  <!-- Featured Banner -->
+  <div class="container" style="margin-top:10px;">
+    <div class="featured-banner">
+      <h2 style="color:white;">🔥 Hot Deals This Week</h2>
+      <p style="opacity:0.9;">Up to 40% off on selected stockfeeds. Limited stock — order now!</p>
+      <a href="https://wa.me/263715582943?text=Hello%20FarmFusion,%20I%20want%20to%20see%20this%20week%27s%20deals"
+        class="btn btn-whatsapp" style="margin-top:15px;" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Ask About Deals
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="container">
+    <div class="products-layout">
+
+      <!-- Filter Sidebar -->
+      <aside class="filter-panel" aria-label="Filter products">
+        <h3>Filter Products</h3>
+
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label><input type="checkbox" value="feed" checked> Stockfeeds</label>
+          <label><input type="checkbox" value="agro" checked> Agrochemicals</label>
+          <label><input type="checkbox" value="fert" checked> Fertilizers</label>
+          <label><input type="checkbox" value="seeds" checked> Seeds</label>
+          <label><input type="checkbox" value="vet" checked> Veterinary</label>
+          <label><input type="checkbox" value="equip" checked> Equipment</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Price Range (USD)</h4>
+          <div class="price-range">
+            <input id="priceMin" type="number" placeholder="Min" min="0">
+            <span>–</span>
+            <input id="priceMax" type="number" placeholder="Max" min="0">
+          </div>
+        </div>
+
+        <div class="filter-actions">
+          <button id="applyFiltersBtn" class="btn btn-primary" style="width:100%;">
+            <i class="fas fa-filter"></i> Apply Filters
+          </button>
+          <button id="resetFiltersBtn" class="btn btn-outline" style="width:100%;">
+            <i class="fas fa-undo"></i> Reset
+          </button>
+        </div>
+      </aside>
+
+      <!-- Product Stalls -->
+      <div class="products-market" id="farmstall">
+
+        <!-- Stockfeeds Stall — dynamically populated -->
+        <article class="stall active" data-category="feed">
+          <div class="stall-header" aria-expanded="true">
+            <div class="stall-name">
+              <div class="stall-icon"><i class="fas fa-drumstick-bite"></i></div>
+              <h2>Stockfeeds</h2>
+              <span class="stall-sub">Poultry • Pigs • Cattle • Goats • Rabbits</span>
+            </div>
+            <div class="stall-toggle"><i class="fas fa-chevron-circle-up"></i></div>
+          </div>
+          <div class="subcategory-area" id="feedStallContent">
+            <p style="padding:20px;text-align:center;color:#666;">
+              <i class="fas fa-spinner fa-spin"></i> Loading feed products…
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /.products-market -->
+    </div><!-- /.products-layout -->
+  </div><!-- /.container -->
+
+  <!-- Other Agricultural Products Section -->
+  <section style="background: var(--cream); padding: 60px 0; margin-top: 60px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Complete Agricultural Solutions</h2>
+        <p>Beyond quality feeds, we provide a comprehensive range of agricultural inputs to support your farming success</p>
+      </div>
+
+      <div style="max-width: 900px; margin: 40px auto 0;">
+        
+        <!-- Seeds -->
+        <article class="agro-stall">
+          <div class="agro-stall-header">
+            <div class="agro-stall-name">
+              <div class="agro-stall-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <div>
+                <h3>Seeds</h3>
+                <span class="agro-stall-sub">Maize • Vegetables • Legumes</span>
+              </div>
+            </div>
+            <div class="agro-stall-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="agro-stall-content">
+            <p class="agro-description">
+              We supply premium certified hybrid and open-pollinated seeds specifically selected for Zimbabwe's diverse agro-ecological zones. Our comprehensive seed portfolio is designed to meet the unique challenges of local farming conditions.
+            </p>
+            <p class="agro-description">
+              Our maize varieties include drought-tolerant and heat-resistant hybrids suitable for Natural Regions 1-3, with maturity periods ranging from early-season (120 days) to late-maturing (160 days) options. These elite multiple stress-tolerant varieties are rigorously tested for disease resistance and deliver consistent yields even under challenging conditions.
+            </p>
+            <p class="agro-description">
+              Beyond maize, we stock high-quality vegetable seeds, legumes, and pasture varieties—all selected for optimal germination rates and adaptability to Zimbabwe's climate. Whether you're a smallholder or commercial farmer, our seeds provide the foundation for successful harvests.
+            </p>
+            <a href="https://wa.me/263715582943?text=I%20need%20information%20about%20seeds" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Inquire About Seeds
+            </a>
+          </div>
+        </article>
+
+        <!-- Veterinary -->
+        <article class="agro-stall">
+          <div class="agro-stall-header">
+            <div class="agro-stall-name">
+              <div class="agro-stall-icon">
+                <i class="fas fa-syringe"></i>
+              </div>
+              <div>
+                <h3>Veterinary Products</h3>
+                <span class="agro-stall-sub">Animal health & wellness</span>
+              </div>
+            </div>
+            <div class="agro-stall-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="agro-stall-content">
+            <p class="agro-description">
+              Healthy livestock is the cornerstone of successful farming. Our comprehensive veterinary range covers all aspects of animal health for cattle, sheep, goats, pigs, and poultry.
+            </p>
+            <p class="agro-description">
+              We stock essential vaccines deployed ahead of rainy seasons to protect your herd against tick-borne diseases and other seasonal threats. Our broad-spectrum dewormers effectively control nematode and fasciola infestations, with formulations that include cobalt for improved growth and performance.
+            </p>
+            <p class="agro-description">
+              From preventative care to treatment solutions, we supply antibiotics, wound care products, multivitamin boluses, and nutritional supplements. Our products help you maintain productive, healthy livestock throughout the year, reducing losses and maximizing returns on your investment.
+            </p>
+            <a href="https://wa.me/263715582943?text=I%20need%20information%20about%20veterinary%20products" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Inquire About Veterinary
+            </a>
+          </div>
+        </article>
+
+        <!-- Equipment & Spares -->
+        <article class="agro-stall">
+          <div class="agro-stall-header">
+            <div class="agro-stall-name">
+              <div class="agro-stall-icon">
+                <i class="fas fa-wrench"></i>
+              </div>
+              <div>
+                <h3>Equipment & Spares</h3>
+                <span class="agro-stall-sub">Irrigation • Tools • Machinery</span>
+              </div>
+            </div>
+            <div class="agro-stall-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="agro-stall-content">
+            <p class="agro-description">
+              Modern farming requires reliable equipment. We supply quality agricultural machinery and irrigation solutions designed for efficient farm operations and sustainable water management.
+            </p>
+            <p class="agro-description">
+              Our irrigation portfolio includes drip systems, centre pivots, mainline components, and pumps—proven solutions that maximize water efficiency and crop yields. We also stock precision planting equipment for accurate seed sowing, professional spraying equipment for targeted chemical application, and a full range of hand tools for everyday farm tasks.
+            </p>
+            <p class="agro-description">
+              Whether you're a smallholder farmer or running a commercial operation, we provide affordable, warranty-backed machinery with full servicing support. Our equipment helps you work smarter, save time, and increase productivity across all your farming activities.
+            </p>
+            <a href="https://wa.me/263715582943?text=I%20need%20information%20about%20farm%20equipment" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Inquire About Equipment
+            </a>
+          </div>
+        </article>
+
+        <!-- Agrochemicals -->
+        <article class="agro-stall">
+          <div class="agro-stall-header">
+            <div class="agro-stall-name">
+              <div class="agro-stall-icon">
+                <i class="fas fa-flask"></i>
+              </div>
+              <div>
+                <h3>Agrochemicals</h3>
+                <span class="agro-stall-sub">Crop protection solutions</span>
+              </div>
+            </div>
+            <div class="agro-stall-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="agro-stall-content">
+            <p class="agro-description">
+              Protect your investment with professional-grade crop protection products. Our agrochemical portfolio includes herbicides, insecticides, fungicides, and seed dressers formulated for Zimbabwe's agricultural challenges.
+            </p>
+            <p class="agro-description">
+              We supply both selective and non-selective herbicides ideal for conservation agriculture systems, helping you maintain clean fields with minimal labor. Our insecticide range includes systemic and contact formulations specifically effective against Fall Armyworm, Maize Stalk Borer, and common pests affecting vegetables like tomatoes and cabbages.
+            </p>
+            <p class="agro-description">
+              Every product comes with full agronomic support to ensure safe, effective application. We help you choose the right solutions for your crops while minimizing environmental impact and maximizing protection. From organophosphates to pyrethroids, we stock trusted formulations that deliver results.
+            </p>
+            <a href="https://wa.me/263715582943?text=I%20need%20information%20about%20agrochemicals" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Inquire About Agrochemicals
+            </a>
+          </div>
+        </article>
+
+        <!-- Fertilizers -->
+        <article class="agro-stall">
+          <div class="agro-stall-header">
+            <div class="agro-stall-name">
+              <div class="agro-stall-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div>
+                <h3>Fertilizers</h3>
+                <span class="agro-stall-sub">Soil nutrition & amendments</span>
+              </div>
+            </div>
+            <div class="agro-stall-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="agro-stall-content">
+            <p class="agro-description">
+              Healthy soil produces healthy crops. Our comprehensive fertilizer range is tailored for Zimbabwe's diverse soil types and agro-ecological regions, addressing the specific nutrient needs of your land.
+            </p>
+            <p class="agro-description">
+              We stock Compound D—the most commonly used fertilizer for maize in Zimbabwe—along with Ammonium Nitrate (AN), Urea 46% N, and specialized NPK blends for optimal crop nutrition. For farmers seeking sustainable options, we offer organic alternatives including Bokashi, Vermicompost, and manure-based products that rebuild soil health over time.
+            </p>
+            <p class="agro-description">
+              Our team provides site-specific recommendations to address phosphorus deficiency in sandy soils and ensure efficient nutrient uptake. Whether you need foliar or soil application products, we help you maximize yields while sustainably rebuilding soil fertility for long-term productivity.
+            </p>
+            <a href="https://wa.me/263715582943?text=I%20need%20information%20about%20fertilizers" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> Inquire About Fertilizers
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Expert Consultation Banner -->
+      <div style="background: linear-gradient(135deg, var(--primary-green), var(--dark-green)); color: white; padding: 40px; border-radius: var(--radius-lg); margin-top: 50px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 15px;">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px;">Expert Agricultural Consultation</h3>
+        <p style="max-width: 700px; margin: 0 auto 25px; opacity: 0.95; font-size: 1.1rem;">
+          Not sure which products are right for your farm? Our experienced agronomists and veterinarians are here to help. Get personalized recommendations based on your specific needs.
+        </p>
+        <a href="tel:+263780840505" class="btn" style="background: white; color: var(--primary-green); padding: 16px 40px; font-weight: 700;">
+          <i class="fas fa-phone"></i> Call for Expert Advice
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust CTA -->
+  <div class="container" style="margin-top:40px;">
+    <div class="trust-box">
+      <i class="fas fa-truck"></i>
+      <h3>Need Something Not Listed?</h3>
+      <p>Call or WhatsApp us — we source everything a farmer needs.</p>
+      <a class="btn btn-whatsapp"
+        href="https://wa.me/263715582943?text=Hello%20FarmFusion%2C%20I%20need%20a%20product%20not%20listed%20on%20your%20site"
+        target="_blank" rel="noopener noreferrer" style="padding:16px 40px;">
+        <i class="fab fa-whatsapp"></i> Chat Now
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>FarmFusion Supplies</h3>
+          <p>Your trusted partner for agricultural success in Zimbabwe. Quality products, expert advice, reliable
+            service.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-phone"></i>
+              <div><strong>Phone</strong><br>
+                <a href="tel:+263780840505" style="color:#ddd;">071 558 2943</a>
+              </div>
+            </li>
+            <li><i class="fas fa-envelope"></i>
+              <div><strong>Email</strong><br>
+                <a href="mailto:info@farmfusion.co.zw" style="color:#ddd;">info@farmfusion.co.zw</a>
+              </div>
+            </li>
+            <li><i class="fas fa-map-marker-alt"></i>
+              <div><strong>Head Office</strong><br>
+                Shop No. 1, AAA Complex at Giant Petroleum,<br>Cross, Harare-Mutoko Highway
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; <span id="currentYear">2024</span> FarmFusion Supplies. All rights reserved.
+          | Made with <i class="fas fa-heart" style="color:#ff4757;"></i> for Zimbabwean Farmers</p>
+        <p style="margin-top:10px;color:#FFD700;font-weight:600;">
+          YOUR FEEDS @RETAIL PRICE — Let's Grow Together!
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/263715582943?text=Hello%20FarmFusion,%20I%20need%20help%20with%20farming%20supplies"
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <div class="whatsapp-text">Order via WhatsApp</div>
+  </a>
+
+  <script src="js/stock-data.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="assets/enterprise-motion.js"></script>
+  <script src="assets/retail-micro.js"></script>
+  <script src="assets/luxury-agro.js"></script>
+
+</body>
+
+</html>
