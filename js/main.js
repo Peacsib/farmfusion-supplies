@@ -6,14 +6,9 @@
    All duplicate/dead handlers removed.
 ───────────────────────────────────────────── */
 
-const CONFIG = {
-    whatsappNumber: '263715582943',
-    mainPhone: '+263780840505',
-    branchPhones: {
-        murehwa: '+263772123456',
-        juru: '+263712065233',
-        cross: '+263780840505'
-    }
+const CONFIG = window.FF_BUSINESS || {
+    phone: { main: '+263780840505', displayMain: '078 084 0505' },
+    whatsapp: { main: '263715582943' }
 };
 
 /* ── 1. FARM-THEMED SIDE MENU ────────────── */
@@ -131,9 +126,6 @@ const CONFIG = {
             if (linkPage === currentPage) {
                 link.classList.add('active');
                 link.setAttribute('aria-current', 'page');
-                // Add special styling for active side menu item
-                link.style.background = 'rgba(255, 255, 255, 0.15)';
-                link.style.borderLeft = '4px solid #FFD700';
             }
         });
     }
@@ -157,7 +149,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
         const h  = Math.floor(ms / 3600000);
         const m  = Math.floor((ms % 3600000) / 60000);
         promoText.innerHTML =
-            `Order now! Offer ends in <strong>${h}h ${m}m</strong> | Call: 078 084 0505`;
+            `Order now! Offer ends in <strong>${h}h ${m}m</strong> | Call: ${CONFIG.phone.displayMain}`;
     }
     update();
     setInterval(update, 60000);

@@ -34,129 +34,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="assets/retail-micro.css">
   <link rel="stylesheet" href="assets/luxury-agro.css">
-
-  <style>
-    /* Products page layout */
-    .filter-panel {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 25px;
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 100px;
-      align-self: start;
-    }
-
-    .filter-panel h3 {
-      margin-bottom: 15px;
-    }
-
-    .filter-group {
-      margin-bottom: 22px;
-    }
-
-    .filter-group h4 {
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--dark-green);
-    }
-
-    .filter-group label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .filter-group input[type="checkbox"] {
-      accent-color: var(--primary-green);
-      width: 16px;
-      height: 16px;
-    }
-
-    .price-range {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .price-range input {
-      flex: 1;
-      padding: 8px 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      width: 100%;
-    }
-
-    .price-range input:focus {
-      outline: 2px solid var(--primary-green);
-      border-color: transparent;
-    }
-
-    .filter-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 5px;
-    }
-
-    .products-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 768px) {
-      .products-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .filter-panel {
-        position: static;
-      }
-    }
-
-    .featured-banner {
-      background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-      color: white;
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    /* Category chips */
-    .category-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .chip {
-      padding: 8px 18px;
-      border: 2px solid var(--primary-green);
-      border-radius: 30px;
-      background: white;
-      color: var(--primary-green);
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: all 0.2s ease;
-    }
-
-    .chip:hover,
-    .chip.active {
-      background: var(--primary-green);
-      color: white;
-    }
-  </style>
 </head>
 
 <body>
@@ -267,12 +144,12 @@
           </div>
           
           <div class="side-menu-actions">
-            <a href="tel:+263780840505" class="side-menu-action">
+            <a href="tel:+263780840505" data-business-phone-main class="side-menu-action">
               <i class="fas fa-phone-alt"></i>
               <span>Call Now</span>
-              <small>078 084 0505</small>
+              <small><span data-business-phone-main>078 084 0505</span></small>
             </a>
-            <a href="https://wa.me/263715582943" class="side-menu-action" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/263715582943" data-business-whatsapp-main data-wa-text="Hello FarmFusion, I want to place an order" class="side-menu-action" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i>
               <span>WhatsApp</span>
               <small>Order via Chat</small>
@@ -294,8 +171,8 @@
         </div>
       </nav>
       <div class="header-cta">
-        <a href="tel:+263780840505" class="phone-link">
-          <i class="fas fa-phone"></i> <span>078 084 0505</span>
+        <a href="tel:+263780840505" data-business-phone-main class="phone-link">
+          <i class="fas fa-phone"></i> <span><span data-business-phone-main>078 084 0505</span></span>
         </a>
         <a href="products.html" class="btn btn-primary">Order Now</a>
       </div>
@@ -333,9 +210,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Broiler Feed Program (0-42 Days)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Broilers require a three-phase feeding program for optimal growth and feed conversion ratio (FCR target: 1.55-1.70 by day 42).</p>
+              <p class="u-mb-15 u-color-muted">Broilers require a three-phase feeding program for optimal growth and feed conversion ratio (FCR target: 1.55-1.70 by day 42).</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 1: Starter (Days 0-10)</h4>
+              <h4 class="u-mt-20 u-color-primary">Phase 1: Starter (Days 0-10)</h4>
               <ul class="feed-bullets">
                 <li><strong>Broiler Starter Crumbs</strong> – 22-24% protein, high energy (2,950-3,150 kcal/kg ME)</li>
                 <li><strong>Feed per bird:</strong> ~450g total over 10 days</li>
@@ -343,7 +220,7 @@
                 <li><strong>Management:</strong> Ensure all chicks have feed in crops within 24 hours of placement</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 2: Grower (Days 11-24)</h4>
+              <h4 class="u-mt-20 u-color-primary">Phase 2: Grower (Days 11-24)</h4>
               <ul class="feed-bullets">
                 <li><strong>Broiler Grower Crumbs/Pellets</strong> – 18-21% protein, sustained energy</li>
                 <li><strong>Feed per bird:</strong> ~1.2kg total over grower phase</li>
@@ -351,7 +228,7 @@
                 <li><strong>Options:</strong> Grower Concentrate (mix with maize for cost savings)</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Phase 3: Finisher (Days 25-42)</h4>
+              <h4 class="u-mt-20 u-color-primary">Phase 3: Finisher (Days 25-42)</h4>
               <ul class="feed-bullets">
                 <li><strong>Broiler Finisher Pellets</strong> – 16-18% protein, balanced for fat deposition</li>
                 <li><strong>Feed per bird:</strong> ~2.5kg total to market weight</li>
@@ -359,7 +236,7 @@
                 <li><strong>Total feed to market:</strong> Approximately 4kg per bird</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Provide clean, fresh water at all times. Water intake is 1.5-2x feed intake by weight.</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Provide clean, fresh water at all times. Water intake is 1.5-2x feed intake by weight.</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-01a7a866.png" alt="Broiler product bag examples" loading="lazy">
@@ -372,9 +249,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Layer Feed Program (Day-Old to Peak Production)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Layer chickens require precise nutrition for optimal egg production, strong eggshells, and sustained laying capacity.</p>
+              <p class="u-mb-15 u-color-muted">Layer chickens require precise nutrition for optimal egg production, strong eggshells, and sustained laying capacity.</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Chick Starter Phase (0-8 Weeks)</h4>
+              <h4 class="u-mt-20 u-color-primary">Chick Starter Phase (0-8 Weeks)</h4>
               <ul class="feed-bullets">
                 <li><strong>Chick Starter Mash</strong> – High protein for rapid early growth</li>
                 <li><strong>Feed per chick:</strong> ~2kg total over 8 weeks</li>
@@ -382,7 +259,7 @@
                 <li><strong>Target:</strong> Meet or exceed breed growth curve by 10%</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Phase (9-17 Weeks)</h4>
+              <h4 class="u-mt-20 u-color-primary">Grower Phase (9-17 Weeks)</h4>
               <ul class="feed-bullets">
                 <li><strong>Growers Mash</strong> – Balanced nutrition for skeletal and organ development</li>
                 <li><strong>Feed per pullet:</strong> ~5kg total over grower phase</li>
@@ -390,14 +267,14 @@
                 <li><strong>Critical:</strong> Avoid stress; maintain consistent feeding schedule</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Pre-Lay/Developer (18-20 Weeks)</h4>
+              <h4 class="u-mt-20 u-color-primary">Pre-Lay/Developer (18-20 Weeks)</h4>
               <ul class="feed-bullets">
                 <li><strong>Layer Developer / Pre-Lay Mash</strong> – Transition diet before laying</li>
                 <li><strong>Purpose:</strong> Prepare reproductive system for egg production</li>
                 <li><strong>Key:</strong> Gradual transition to prevent digestive upset</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Production Phase (21+ Weeks)</h4>
+              <h4 class="u-mt-20 u-color-primary">Production Phase (21+ Weeks)</h4>
               <ul class="feed-bullets">
                 <li><strong>Layers Mash Phase 1 & 2</strong> – 16-18% protein, 3.5%+ calcium for strong shells</li>
                 <li><strong>Feed per hen:</strong> ~110-120g per day during peak production</li>
@@ -405,7 +282,7 @@
                 <li><strong>Layers Concentrate:</strong> Mix with maize for economical feeding</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Inadequate calcium leads to weak shells. Ensure constant access to clean water—dehydration reduces egg production immediately.</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Inadequate calcium leads to weak shells. Ensure constant access to clean water—dehydration reduces egg production immediately.</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Layers feed product bags" loading="lazy">
@@ -418,9 +295,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Road Runner Feed (Indigenous/Free-Range Poultry)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Road Runner chickens are Zimbabwe's indigenous breed, popular for their superior taste and adaptability to free-range systems. They thrive on natural foods supplemented with quality feed.</p>
+              <p class="u-mb-15 u-color-muted">Road Runner chickens are Zimbabwe's indigenous breed, popular for their superior taste and adaptability to free-range systems. They thrive on natural foods supplemented with quality feed.</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Natural Diet Foundation</h4>
+              <h4 class="u-mt-20 u-color-primary">Natural Diet Foundation</h4>
               <ul class="feed-bullets">
                 <li><strong>Scavenging foods:</strong> Sorghum, rapoko (finger millet), maize, green vegetables</li>
                 <li><strong>Protein sources:</strong> Insects, lizards, worms (natural foraging)</li>
@@ -428,7 +305,7 @@
                 <li><strong>Growing demand:</strong> Popular with restaurants across Zimbabwe</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Supplemental Feed Program</h4>
+              <h4 class="u-mt-20 u-color-primary">Supplemental Feed Program</h4>
               <ul class="feed-bullets">
                 <li><strong>RR1 Starter</strong> – Energy and protein-rich for young chicks (day-old to 8 weeks)</li>
                 <li><strong>Feeding:</strong> Easy-to-digest feeds; provide variety for mineral/vitamin balance</li>
@@ -436,7 +313,7 @@
                 <li><strong>RR Breeder/Layer</strong> – For breeding flocks and laying hens</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Feeding Guidelines</h4>
+              <h4 class="u-mt-20 u-color-primary">Feeding Guidelines</h4>
               <ul class="feed-bullets">
                 <li><strong>Amount:</strong> Approximately ½ cup (100-120g) per bird per day when supplementing</li>
                 <li><strong>Water:</strong> Must be available at all times</li>
@@ -444,7 +321,7 @@
                 <li><strong>Growth rate:</strong> Slower than broilers but superior meat quality</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Road Runners are excellent for smallholder farmers. Start with 1 rooster + 2 hens; expect 60+ birds within one year with proper management.</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Road Runners are excellent for smallholder farmers. Start with 1 rooster + 2 hens; expect 60+ birds within one year with proper management.</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-3d8c4e29.png" alt="Road Runner product bag examples" loading="lazy">
@@ -457,9 +334,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Pig Feed Program (Birth to Market)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Pigs require age-appropriate nutrition at each growth stage. A growing pig eats approximately 4% of its body weight daily.</p>
+              <p class="u-mb-15 u-color-muted">Pigs require age-appropriate nutrition at each growth stage. A growing pig eats approximately 4% of its body weight daily.</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Creep Phase (~1-4 Weeks)</h4>
+              <h4 class="u-mt-20 u-color-primary">Creep Phase (~1-4 Weeks)</h4>
               <ul class="feed-bullets">
                 <li><strong>Pig Creep Meal</strong> – Highly digestible, rich in protein and essential amino acids</li>
                 <li><strong>Feed per piglet:</strong> ~10kg total during creep phase</li>
@@ -467,7 +344,7 @@
                 <li><strong>Critical:</strong> Feed quality and palatability paramount for developing digestive systems</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Weaner Phase (5kg-35kg Body Weight)</h4>
+              <h4 class="u-mt-20 u-color-primary">Weaner Phase (5kg-35kg Body Weight)</h4>
               <ul class="feed-bullets">
                 <li><strong>Pig Weaner Meal</strong> – 10-20% protein, 3,000-3,200 kcal/kg energy</li>
                 <li><strong>Feed per weaner:</strong> ~26kg total to reach 35kg body weight</li>
@@ -475,7 +352,7 @@
                 <li><strong>Management:</strong> Ensure smooth transition from creep to weaner feed</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Phase (35kg-60kg)</h4>
+              <h4 class="u-mt-20 u-color-primary">Grower Phase (35kg-60kg)</h4>
               <ul class="feed-bullets">
                 <li><strong>Pig Grower Meal</strong> – 16% crude protein, 3,200 kcal DE</li>
                 <li><strong>Grower Concentrate</strong> – Mix 2 parts concentrate + 3 parts crushed maize by weight</li>
@@ -483,7 +360,7 @@
                 <li><strong>Calcium:Phosphorus ratio:</strong> Maintain 1:1 to 1.5:1 for bone health</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Finisher Phase (60kg to Market)</h4>
+              <h4 class="u-mt-20 u-color-primary">Finisher Phase (60kg to Market)</h4>
               <ul class="feed-bullets">
                 <li><strong>Grower/Finisher Meal</strong> – Day 57 to slaughter (typically 147 days)</li>
                 <li><strong>Feed per pig:</strong> ~225kg total by market weight</li>
@@ -491,14 +368,14 @@
                 <li><strong>Finisher Concentrate:</strong> Cost-effective option mixed with maize</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Breeding Stock</h4>
+              <h4 class="u-mt-20 u-color-primary">Breeding Stock</h4>
               <ul class="feed-bullets">
                 <li><strong>Lactating Sow Meal</strong> – Base 2kg/day + 0.5kg per live piglet; ~3kg/day pre-farrowing</li>
                 <li><strong>Pig Boar & Sow</strong> – Maintenance ration for breeding stock (1-2kg per animal per day)</li>
                 <li><strong>Supplements:</strong> Provide legume hay (groundnut haulms, bean pods, cowpea residues)</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Zinc, copper, iron, manganese, and selenium support immunity and hoof health. Organic forms absorb better than inorganic minerals.</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Zinc, copper, iron, manganese, and selenium support immunity and hoof health. Organic forms absorb better than inorganic minerals.</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Pig feed product bag examples" loading="lazy">
@@ -511,9 +388,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Rabbit Feed Program (All Life Stages)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Rabbits require high-fiber diets with precise nutrient balance. A well-fed rabbit produces quality meat and maintains optimal health.</p>
+              <p class="u-mb-15 u-color-muted">Rabbits require high-fiber diets with precise nutrient balance. A well-fed rabbit produces quality meat and maintains optimal health.</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Essential Nutritional Requirements</h4>
+              <h4 class="u-mt-20 u-color-primary">Essential Nutritional Requirements</h4>
               <ul class="feed-bullets">
                 <li><strong>Fiber:</strong> Minimum 14% (critical for digestive health and peristaltic action)</li>
                 <li><strong>Protein:</strong> Maximum 20% (excess can cause health issues)</li>
@@ -521,7 +398,7 @@
                 <li><strong>Calcium:</strong> Maximum 1.1% (prevents urinary problems)</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Young Rabbits (0-6 Months)</h4>
+              <h4 class="u-mt-20 u-color-primary">Young Rabbits (0-6 Months)</h4>
               <ul class="feed-bullets">
                 <li><strong>Rabbit Starter</strong> – Alfalfa-based pellets, high in protein and calcium</li>
                 <li><strong>Purpose:</strong> Support rapid growth and bone development</li>
@@ -529,7 +406,7 @@
                 <li><strong>Feeding:</strong> Unlimited pellets plus fresh hay</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Adult Rabbits (6+ Months)</h4>
+              <h4 class="u-mt-20 u-color-primary">Adult Rabbits (6+ Months)</h4>
               <ul class="feed-bullets">
                 <li><strong>Rabbit Pellets</strong> – Timothy hay-based, lower protein and calcium</li>
                 <li><strong>Daily amount:</strong> ¼ cup per 5 lbs body weight (high-fiber pellets)</li>
@@ -537,7 +414,7 @@
                 <li><strong>Greens:</strong> 1 cup fresh leafy greens per 2 lbs body weight</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Grower Rabbits (Market Production)</h4>
+              <h4 class="u-mt-20 u-color-primary">Grower Rabbits (Market Production)</h4>
               <ul class="feed-bullets">
                 <li><strong>Rabbit Grower</strong> – Balanced nutrition for efficient weight gain</li>
                 <li><strong>Feed intake:</strong> Approximately 2-4% of body weight daily</li>
@@ -545,7 +422,7 @@
                 <li><strong>Benefits:</strong> Improved digestion, reduced obesity risk</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Important Feeding Notes</h4>
+              <h4 class="u-mt-20 u-color-primary">Important Feeding Notes</h4>
               <ul class="feed-bullets">
                 <li><strong>Water:</strong> Must be available at all times (critical for health)</li>
                 <li><strong>Avoid:</strong> Pellets with whole nuts, seeds, fruits (muesli-style)</li>
@@ -553,7 +430,7 @@
                 <li><strong>Fiber source:</strong> Lignocellulose moves rapidly through colon as hard fecal pellets</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Rabbits practice cecotrophy (eating soft fecal pellets). This is normal and essential for nutrient absorption—don't prevent it!</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Rabbits practice cecotrophy (eating soft fecal pellets). This is normal and essential for nutrient absorption—don't prevent it!</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Rabbit feed product bags" loading="lazy">
@@ -566,9 +443,9 @@
           <div class="feed-panel-grid">
             <div>
               <h3>Goat Feed Program (All Life Stages)</h3>
-              <p style="margin-bottom: 15px; color: #666;">Goats are ruminants with four-chambered stomachs. They are primarily browsers (prefer leaves and bushes) but also graze on grass.</p>
+              <p class="u-mb-15 u-color-muted">Goats are ruminants with four-chambered stomachs. They are primarily browsers (prefer leaves and bushes) but also graze on grass.</p>
               
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Core Nutritional Requirements</h4>
+              <h4 class="u-mt-20 u-color-primary">Core Nutritional Requirements</h4>
               <ul class="feed-bullets">
                 <li><strong>Six essential nutrients:</strong> Proteins, carbohydrates, fats, vitamins, minerals, water</li>
                 <li><strong>Forage foundation:</strong> 70% of diet should be quality hay, browse, grasses, legumes</li>
@@ -576,7 +453,7 @@
                 <li><strong>Water:</strong> Constant access essential (goats are sensitive to dehydration)</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Maintenance Feeding (Non-Productive)</h4>
+              <h4 class="u-mt-20 u-color-primary">Maintenance Feeding (Non-Productive)</h4>
               <ul class="feed-bullets">
                 <li><strong>Goat Feed - Maintenance</strong> – Minimum feed for non-growing, non-pregnant, non-lactating goats</li>
                 <li><strong>Amount:</strong> 1-2kg per animal per day</li>
@@ -584,7 +461,7 @@
                 <li><strong>Supplements:</strong> Legume hay (groundnut haulms, bean pods, cowpea residues)</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Growing Goats (Kids to Market)</h4>
+              <h4 class="u-mt-20 u-color-primary">Growing Goats (Kids to Market)</h4>
               <ul class="feed-bullets">
                 <li><strong>Goat Feed - Nuts</strong> – Concentrated nutrition for growth</li>
                 <li><strong>Protein:</strong> Essential for muscle growth and development</li>
@@ -592,7 +469,7 @@
                 <li><strong>Browse:</strong> Encourage natural browsing behavior for balanced nutrition</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Lactating Does (Milk Production)</h4>
+              <h4 class="u-mt-20 u-color-primary">Lactating Does (Milk Production)</h4>
               <ul class="feed-bullets">
                 <li><strong>Daily intake:</strong> 3-5% of body weight in dry matter</li>
                 <li><strong>Example:</strong> 50kg doe producing milk needs up to 2.5kg dry feed daily</li>
@@ -600,7 +477,7 @@
                 <li><strong>Minerals:</strong> Free-choice loose minerals essential for lactation</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Forage & Browse Options</h4>
+              <h4 class="u-mt-20 u-color-primary">Forage & Browse Options</h4>
               <ul class="feed-bullets">
                 <li><strong>Preferred:</strong> Leaves from trees and bushes (natural browsing)</li>
                 <li><strong>Grasses:</strong> Various grass types for grazing</li>
@@ -608,7 +485,7 @@
                 <li><strong>Crop residues:</strong> Bean pods, cowpea residues, maize stover</li>
               </ul>
 
-              <h4 style="margin-top: 20px; color: var(--primary-green);">Year-Round Forage Planning</h4>
+              <h4 class="u-mt-20 u-color-primary">Year-Round Forage Planning</h4>
               <ul class="feed-bullets">
                 <li><strong>Critical:</strong> Develop annual forage program for consistent feed availability</li>
                 <li><strong>Dry season:</strong> Store hay and crop residues</li>
@@ -616,7 +493,7 @@
                 <li><strong>Minerals:</strong> Provide free-choice minerals year-round</li>
               </ul>
 
-              <p style="margin-top: 15px; font-style: italic; color: #666;">💡 Tip: Goats regurgitate and chew cud to break down cellulose. Ensure adequate fiber for proper rumen function and digestive health.</p>
+              <p class="u-mt-15 u-italic u-color-muted">💡 Tip: Goats regurgitate and chew cud to break down cellulose. Ensure adequate fiber for proper rumen function and digestive health.</p>
             </div>
             <figure class="feed-figure">
               <img src="images/feed-info/feedinfo-ecb843fa.png" alt="Goat feed product bags" loading="lazy">
@@ -646,17 +523,17 @@
   </div>
 
   <!-- Category Chips -->
-  <div class="container" style="margin-top:20px;">
+  <div class="container u-mt-20">
     <div id="categoryChips" class="category-chips" aria-label="Filter by category"></div>
   </div>
 
   <!-- Featured Banner -->
-  <div class="container" style="margin-top:10px;">
+  <div class="container u-mt-10">
     <div class="featured-banner">
-      <h2 style="color:white;">🔥 Hot Deals This Week</h2>
-      <p style="opacity:0.9;">Up to 40% off on selected stockfeeds. Limited stock — order now!</p>
+      <h2 class="u-color-white">🔥 Hot Deals This Week</h2>
+      <p class="u-opacity-90">Up to 40% off on selected stockfeeds. Limited stock — order now!</p>
       <a href="https://wa.me/263715582943?text=Hello%20FarmFusion,%20I%20want%20to%20see%20this%20week%27s%20deals"
-        class="btn btn-whatsapp" style="margin-top:15px;" target="_blank" rel="noopener noreferrer">
+        class="btn btn-whatsapp u-mt-15" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> Ask About Deals
       </a>
     </div>
@@ -690,10 +567,10 @@
         </div>
 
         <div class="filter-actions">
-          <button id="applyFiltersBtn" class="btn btn-primary" style="width:100%;">
+          <button id="applyFiltersBtn" class="btn btn-primary u-w-100">
             <i class="fas fa-filter"></i> Apply Filters
           </button>
-          <button id="resetFiltersBtn" class="btn btn-outline" style="width:100%;">
+          <button id="resetFiltersBtn" class="btn btn-outline u-w-100">
             <i class="fas fa-undo"></i> Reset
           </button>
         </div>
@@ -713,7 +590,7 @@
             <div class="stall-toggle"><i class="fas fa-chevron-circle-up"></i></div>
           </div>
           <div class="subcategory-area" id="feedStallContent">
-            <p style="padding:20px;text-align:center;color:#666;">
+            <p class="feed-loading-state">
               <i class="fas fa-spinner fa-spin"></i> Loading feed products…
             </p>
           </div>
@@ -724,14 +601,14 @@
   </div><!-- /.container -->
 
   <!-- Other Agricultural Products Section -->
-  <section style="background: var(--cream); padding: 60px 0; margin-top: 60px;">
+  <section class="product-categories-section">
     <div class="container">
       <div class="section-header">
         <h2>Complete Agricultural Solutions</h2>
         <p>Beyond quality feeds, we provide a comprehensive range of agricultural inputs to support your farming success</p>
       </div>
 
-      <div style="max-width: 900px; margin: 40px auto 0;">
+      <div class="product-categories-wrap">
         
         <!-- Seeds -->
         <article class="agro-stall">
@@ -896,15 +773,15 @@
       </div>
 
       <!-- Expert Consultation Banner -->
-      <div style="background: linear-gradient(135deg, var(--primary-green), var(--dark-green)); color: white; padding: 40px; border-radius: var(--radius-lg); margin-top: 50px; text-align: center;">
-        <div style="font-size: 2.5rem; margin-bottom: 15px;">
+      <div class="consultation-cta">
+        <div class="consultation-cta-icon">
           <i class="fas fa-user-tie"></i>
         </div>
-        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px;">Expert Agricultural Consultation</h3>
-        <p style="max-width: 700px; margin: 0 auto 25px; opacity: 0.95; font-size: 1.1rem;">
+        <h3 class="consultation-cta-title">Expert Agricultural Consultation</h3>
+        <p class="consultation-cta-text">
           Not sure which products are right for your farm? Our experienced agronomists and veterinarians are here to help. Get personalized recommendations based on your specific needs.
         </p>
-        <a href="tel:+263780840505" class="btn" style="background: white; color: var(--primary-green); padding: 16px 40px; font-weight: 700;">
+        <a href="tel:+263780840505" data-business-phone-main class="btn consultation-cta-btn">
           <i class="fas fa-phone"></i> Call for Expert Advice
         </a>
       </div>
@@ -912,14 +789,14 @@
   </section>
 
   <!-- Trust CTA -->
-  <div class="container" style="margin-top:40px;">
+  <div class="container u-mt-40">
     <div class="trust-box">
       <i class="fas fa-truck"></i>
       <h3>Need Something Not Listed?</h3>
       <p>Call or WhatsApp us — we source everything a farmer needs.</p>
       <a class="btn btn-whatsapp"
         href="https://wa.me/263715582943?text=Hello%20FarmFusion%2C%20I%20need%20a%20product%20not%20listed%20on%20your%20site"
-        target="_blank" rel="noopener noreferrer" style="padding:16px 40px;">
+        target="_blank" rel="noopener noreferrer" class="u-btn-pad">
         <i class="fab fa-whatsapp"></i> Chat Now
       </a>
     </div>
@@ -948,12 +825,12 @@
           <ul class="contact-info">
             <li><i class="fas fa-phone"></i>
               <div><strong>Phone</strong><br>
-                <a href="tel:+263780840505" style="color:#ddd;">078 084 0505</a>
+                <a href="tel:+263780840505" data-business-phone-main class="u-color-footer-link"><span data-business-phone-main>078 084 0505</span></a>
               </div>
             </li>
             <li><i class="fas fa-envelope"></i>
               <div><strong>Email</strong><br>
-                <a href="mailto:info@farmfusion.co.zw" style="color:#ddd;">info@farmfusion.co.zw</a>
+                <a href="mailto:info@farmfusion.co.zw" data-business-email class="u-color-footer-link"><span data-business-email>info@farmfusion.co.zw</span></a>
               </div>
             </li>
             <li><i class="fas fa-map-marker-alt"></i>
@@ -966,8 +843,8 @@
       </div>
       <div class="copyright">
         <p>&copy; <span id="currentYear">2024</span> FarmFusion Supplies. All rights reserved.
-          | Made with <i class="fas fa-heart" style="color:#ff4757;"></i> for Zimbabwean Farmers</p>
-        <p style="margin-top:10px;color:#FFD700;font-weight:600;">
+          | Made with <i class="fas fa-heart u-color-heart"></i> for Zimbabwean Farmers</p>
+        <p class="u-tagline-gold">
           YOUR FEEDS @RETAIL PRICE — Let's Grow Together!
         </p>
       </div>
@@ -984,6 +861,8 @@
   <script src="js/stock-data.js"></script>
   <script src="js/products-data.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/business-config.js"></script>
+  <script src="js/business-bindings.js"></script>
   <script src="js/main.js"></script>
 
 </body>
