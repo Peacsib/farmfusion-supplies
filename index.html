@@ -27,25 +27,24 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#1a7f3c">
 
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="assets/enterprise-motion.css">
   <link rel="stylesheet" href="assets/retail-micro.css">
   <link rel="stylesheet" href="assets/luxury-agro.css">
-  
-  <!-- GSAP Animation Library -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-  
-  <!-- Premium Scroll Animations -->
-  <script src="js/gsap-animations.js" defer></script>
-  <script src="js/scroll-animations.js" defer></script>
 </head>
 
 <body>
@@ -55,7 +54,7 @@
     <div class="container">
       <div class="promo-badge">LIMITED OFFER</div>
       <h3>FREE 24HR Delivery + UP TO 40% OFF</h3>
-      <p id="promoText">Order before 3PM for same-day delivery | Call: 071 558 2943</p>
+      <p id="promoText">Order before 3PM for same-day delivery | Call: 078 084 0505</p>
     </div>
   </div>
 
@@ -64,7 +63,7 @@
     <div class="container header-container">
       <div class="logo">
         <!-- Logo uses SVG mark + webp wordmark; h1 reserved for page hero -->
-        <img class="logo-mark" src="images/logo.webp" alt="FarmFusion Supplies">
+        <img class="logo-mark" src="images/logo.webp" alt="FarmFusion Supplies" width="58" height="58">
         <div class="logo-text">
           <span class="logo-brand">FarmFusion<span>Supplies</span></span>
           <div class="logo-tagline">All FEEDS @CHEAP PRICE</div>
@@ -160,7 +159,7 @@
             <a href="tel:+263780840505" class="side-menu-action">
               <i class="fas fa-phone-alt"></i>
               <span>Call Now</span>
-              <small>071 558 2943</small>
+              <small>078 084 0505</small>
             </a>
             <a href="https://wa.me/263715582943" class="side-menu-action" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i>
@@ -184,13 +183,15 @@
         </div>
       </nav>
       <div class="header-cta">
-        <a href="tel:+263780840505" class="phone-link" aria-label="Call us at 071 558 2943">
-          <i class="fas fa-phone"></i> <span>071 558 2943</span>
+        <a href="tel:+263780840505" class="phone-link" aria-label="Call us at 078 084 0505">
+          <i class="fas fa-phone"></i> <span>078 084 0505</span>
         </a>
         <a href="products.html" class="btn btn-primary">Order Now</a>
       </div>
     </div>
   </header>
+
+  <main>
 
   <!-- Hero -->
   <section class="hero" id="home" aria-labelledby="heroHeading">
@@ -208,30 +209,44 @@
     </div>
   </section>
 
-  <!-- Trust Bento -->
-  <section class="trust-section" aria-label="Why choose FarmFusion">
+  <!-- Why Farmers Trust Us -->
+  <section class="trust-section" id="why-trust" aria-label="Why farmers trust FarmFusion">
     <div class="container">
-      <div class="bento-grid stagger-container">
-        <div class="bento-main fade-up" style="padding:30px;">
-          <div class="trust-icon"><i class="fas fa-award"></i></div>
-          <h3>Certified Quality</h3>
-          <p>All products meet Zimbabwe's highest agricultural standards.</p>
-        </div>
-        <div class="bento-main fade-up" style="padding:30px;">
-          <div class="trust-icon"><i class="fas fa-truck-fast"></i></div>
-          <h3>Fast Delivery</h3>
-          <p>24-hour delivery within 50km of our branches.</p>
-        </div>
-        <div class="bento-main fade-up" style="padding:30px;">
-          <div class="trust-icon"><i class="fas fa-headset"></i></div>
-          <h3>Expert Support</h3>
-          <p>Agronomists &amp; veterinarians available for consultation.</p>
-        </div>
-        <div class="bento-main fade-up" style="padding:30px;">
-          <div class="trust-icon"><i class="fas fa-tags"></i></div>
-          <h3>Best Prices</h3>
-          <p>Retail pricing direct to every farmer.</p>
-        </div>
+      <h2 class="trust-title">Why Farmers Trust FarmFusion</h2>
+      <div class="trust-underline"></div>
+      
+      <div class="trust-grid">
+        <article class="trust-card">
+          <div class="trust-icon">
+            <i class="fa-solid fa-tags" aria-hidden="true"></i>
+          </div>
+          <h3>Retail Pricing</h3>
+          <p>Direct wholesale prices to every farmer — no middleman markup</p>
+        </article>
+        
+        <article class="trust-card">
+          <div class="trust-icon">
+            <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+          </div>
+          <h3>Reliable Supply</h3>
+          <p>Consistent stock availability when you need it most</p>
+        </article>
+        
+        <article class="trust-card">
+          <div class="trust-icon">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          </div>
+          <h3>Local Delivery</h3>
+          <p>24-hour delivery within 50km of our three branches</p>
+        </article>
+        
+        <article class="trust-card">
+          <div class="trust-icon">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+          </div>
+          <h3>Quality Feeds</h3>
+          <p>All products meet Zimbabwe's highest agricultural standards</p>
+        </article>
       </div>
     </div>
   </section>
@@ -239,17 +254,18 @@
   <!-- Featured Products -->
   <section class="products-section" id="products" aria-labelledby="featuredHeading">
     <div class="container">
-      <div class="section-header fade-up">
-        <h2 id="featuredHeading" class="gradient-text">Our Top Products</h2>
+      <div class="section-header">
+        <h2 id="featuredHeading">Our Top Products</h2>
         <p>Carefully selected agricultural inputs that deliver proven results for Zimbabwean farming conditions</p>
       </div>
-      <div class="products-grid stagger-container">
+      <div class="products-grid">
 
-        <article class="product-card scale-in hover-lift" style="position:relative;">
+        <article class="product-card" style="position:relative;">
           <span class="product-badge" style="position:absolute;top:10px;right:10px;">Broilers</span>
           <div class="product-img product-1" role="img" aria-label="Premium Broiler Feed"></div>
           <div class="product-content">
             <h3>Premium Broiler Feed</h3>
+            <p class="product-clarity">Best for fast broiler growth and optimal weight gain</p>
             <div class="product-price">Available: 10kg / 25kg / 50kg</div>
             <ul class="product-features">
               <li><i class="fas fa-check"></i> High protein formula</li>
@@ -265,11 +281,12 @@
           </div>
         </article>
 
-        <article class="product-card scale-in hover-lift" style="position:relative;">
+        <article class="product-card" style="position:relative;">
           <span class="product-badge" style="position:absolute;top:10px;right:10px;">Layers</span>
           <div class="product-img product-2" role="img" aria-label="Layer Pellets"></div>
           <div class="product-content">
             <h3>Layer Pellets &amp; Mash</h3>
+            <p class="product-clarity">Layer feed for consistent egg production and strong shells</p>
             <div class="product-price">Available: 10kg / 25kg / 50kg</div>
             <ul class="product-features">
               <li><i class="fas fa-check"></i> Improved egg production</li>
@@ -285,11 +302,12 @@
           </div>
         </article>
 
-        <article class="product-card scale-in hover-lift" style="position:relative;">
+        <article class="product-card" style="position:relative;">
           <span class="product-badge" style="position:absolute;top:10px;right:10px;">Pigs</span>
           <div class="product-img product-3" role="img" aria-label="Pig Grower Pellets"></div>
           <div class="product-content">
             <h3>Pig Grower Pellets</h3>
+            <p class="product-clarity">Optimal nutrition for healthy pig development and weight gain</p>
             <div class="product-price">Available: 10kg / 25kg / 50kg</div>
             <ul class="product-features">
               <li><i class="fas fa-check"></i> Efficient weight gain</li>
@@ -305,11 +323,12 @@
           </div>
         </article>
 
-        <article class="product-card scale-in hover-lift" style="position:relative;">
+        <article class="product-card" style="position:relative;">
           <span class="product-badge" style="position:absolute;top:10px;right:10px;">Rabbits</span>
           <div class="product-img product-4" role="img" aria-label="Rabbit Pellets"></div>
           <div class="product-content">
             <h3>Rabbit Pellets</h3>
+            <p class="product-clarity">Complete nutrition for healthy rabbit breeding and growth</p>
             <div class="product-price">Available: 10kg / 25kg / 50kg</div>
             <ul class="product-features">
               <li><i class="fas fa-check"></i> Complete nutrition</li>
@@ -325,11 +344,12 @@
           </div>
         </article>
 
-        <article class="product-card scale-in hover-lift" style="position:relative;">
+        <article class="product-card" style="position:relative;">
           <span class="product-badge" style="position:absolute;top:10px;right:10px;">Roadrunner</span>
           <div class="product-img product-5" role="img" aria-label="Roadrunner Pellets"></div>
           <div class="product-content">
             <h3>Roadrunner Pellets</h3>
+            <p class="product-clarity">Specialized feed for roadrunner poultry optimal health</p>
             <div class="product-price">Available: 10kg / 25kg / 50kg</div>
             <ul class="product-features">
               <li><i class="fas fa-check"></i> Complete nutrition formula</li>
@@ -347,7 +367,7 @@
 
       </div>
       <div style="text-align:center;margin-top:50px;">
-        <a href="products.html" class="btn btn-primary btn-magnetic" style="padding:16px 40px;">
+        <a href="products.html" class="btn btn-primary" style="padding:16px 40px;">
           <i class="fas fa-boxes"></i> View Full Product Catalogue
         </a>
       </div>
@@ -359,25 +379,34 @@
     <div class="container">
       <div class="bento-grid">
         <div class="bento-main">
-          <span class="hero-tag"
-            style="background:#FFD700;color:var(--dark-green);display:inline-block;margin-bottom:20px;">ABOUT US</span>
+          <span class="about-badge">ABOUT US</span>
           <h2 id="aboutPreviewHeading" style="font-size:2rem;">Your Trusted Agro-Retail Partner</h2>
           <p>FarmFusion Supplies is a proudly Zimbabwean agro-retail business committed to supporting farmers with
             reliable, high-quality agricultural inputs and solutions.</p>
           <div class="about-stats">
-            <div class="stat-item"><span class="stat-number">3</span> Branches</div>
-            <div class="stat-item"><span class="stat-number">24hr</span> Delivery</div>
-            <div class="stat-item"><span class="stat-number">100%</span> Genuine</div>
+            <div class="stat-item"><span class="stat-number">3</span><br>Branches</div>
+            <div class="stat-item"><span class="stat-number">24hr</span><br>Delivery</div>
+            <div class="stat-item"><span class="stat-number">100%</span><br>Genuine</div>
           </div>
         </div>
-        <div class="bento-side"
-          style="background:var(--primary-green);color:white;display:flex;flex-direction:column;justify-content:center;">
-          <div style="font-size:3rem;margin-bottom:20px;"><i class="fas fa-tractor"></i></div>
-          <h3 style="color:white;">YOUR FEEDS @RETAIL PRICE</h3>
-          <p style="opacity:0.9;">Let's grow together.</p>
-          <a href="about.html" class="btn btn-outline"
-            style="border-color:white;color:white;margin-top:20px;align-self:flex-start;">
-            Read More
+        <div class="bento-side premium-cta-card">
+          <div class="premium-badge">
+            <i class="fas fa-tags"></i> RETAIL FEEDS
+          </div>
+          <h3>YOUR FEEDS @RETAIL PRICE</h3>
+          <p>Let's grow together — premium stockfeeds for every stage.</p>
+          <div class="premium-features">
+            <div class="feature-item">
+              <i class="fas fa-truck-fast"></i>
+              <span>Fast delivery</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-box-open"></i>
+              <span>Always in stock</span>
+            </div>
+          </div>
+          <a href="products.html" class="btn btn-cta-white">
+            Explore Feeds <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -394,73 +423,85 @@
       <div class="locations-grid">
 
         <article class="location-card">
-          <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>FarmFusion Cross</h3>
-          <p>Shop No. 1, AAA Complex at Giant Petroleum<br>Harare-Mutoko Highway</p>
-          <div class="location-hours">
-            <strong>Hours:</strong><br>
-            Mon–Sat: 8:00AM – 5:00PM<br>
-            Sunday: Closed
+          <div class="branch-header">
+            <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>FarmFusion Cross</h3>
+            <p class="branch-address">Shop No. 1, AAA Complex at Giant Petroleum<br>Harare-Mutoko Highway</p>
           </div>
-          <div style="display:flex;gap:8px;justify-content:center;margin-top:15px;flex-wrap:wrap;">
+          
+          <div class="hours-box">
+            <strong>Hours</strong>
+            <div>Mon–Sat: 8:00AM – 5:00PM</div>
+            <div>Sunday: Closed</div>
+          </div>
+          
+          <div class="branch-actions">
             <a href="https://share.google/UEonhrZMyl51LXur0" target="_blank" rel="noopener noreferrer"
-              class="btn btn-outline" style="padding:8px 12px;">
+              class="btn btn-outline btn-sm">
               <i class="fas fa-map-marked-alt"></i> Directions
             </a>
-            <a href="tel:+263780840505" class="btn btn-outline" style="padding:8px 12px;">
+            <a href="tel:+263780840505" class="btn btn-outline btn-sm">
               <i class="fas fa-phone"></i> Call
             </a>
-            <a href="https://wa.me/263715582943" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"
-              style="padding:8px 12px;">
-              <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/263715582943" target="_blank" rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-sm btn-full" aria-label="Contact via WhatsApp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
         </article>
 
         <article class="location-card">
-          <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>FarmFusion Juru / Bhora</h3>
-          <p>Shop No. 3, AAA Complex<br>Behind the unfinished Storey Building</p>
-          <div class="location-hours">
-            <strong>Hours:</strong><br>
-            Mon–Sat: 8:00AM – 5:00PM<br>
-            Sunday: Closed
+          <div class="branch-header">
+            <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>FarmFusion Juru / Bhora</h3>
+            <p class="branch-address">Shop No. 3, AAA Complex<br>Behind the unfinished Storey Building</p>
           </div>
-          <div style="display:flex;gap:8px;justify-content:center;margin-top:15px;flex-wrap:wrap;">
+          
+          <div class="hours-box">
+            <strong>Hours</strong>
+            <div>Mon–Sat: 8:00AM – 5:00PM</div>
+            <div>Sunday: Closed</div>
+          </div>
+          
+          <div class="branch-actions">
             <a href="https://maps.app.goo.gl/87tSYHBuXL7GL4aJA" target="_blank" rel="noopener noreferrer"
-              class="btn btn-outline" style="padding:8px 12px;">
+              class="btn btn-outline btn-sm">
               <i class="fas fa-map-marked-alt"></i> Directions
             </a>
-            <a href="tel:+263712065233" class="btn btn-outline" style="padding:8px 12px;">
+            <a href="tel:+263712065233" class="btn btn-outline btn-sm">
               <i class="fas fa-phone"></i> Call
             </a>
-            <a href="https://wa.me/263712065233" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"
-              style="padding:8px 12px;">
-              <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/263712065233" target="_blank" rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-sm btn-full" aria-label="Contact via WhatsApp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
         </article>
 
         <article class="location-card">
-          <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>Murehwa Branch</h3>
-          <p>Main Street, Murehwa Centre</p>
-          <div class="location-hours">
-            <strong>Hours:</strong><br>
-            Mon–Sat: 7:30AM – 5:30PM<br>
-            Sunday: 8:00AM – 1:00PM
+          <div class="branch-header">
+            <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Murehwa Branch</h3>
+            <p class="branch-address">Main Street, Murehwa Centre</p>
           </div>
-          <div style="display:flex;gap:8px;justify-content:center;margin-top:15px;flex-wrap:wrap;">
-            <a href="https://maps.app.goo.gl/Murehwa" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-              style="padding:8px 12px;">
+          
+          <div class="hours-box">
+            <strong>Hours</strong>
+            <div>Mon–Sat: 7:30AM – 5:30PM</div>
+            <div>Sunday: 8:00AM – 1:00PM</div>
+          </div>
+          
+          <div class="branch-actions">
+            <a href="https://maps.app.goo.gl/Murehwa" target="_blank" rel="noopener noreferrer" 
+              class="btn btn-outline btn-sm">
               <i class="fas fa-map-marked-alt"></i> Directions
             </a>
-            <a href="tel:+263772123456" class="btn btn-outline" style="padding:8px 12px;">
+            <a href="tel:+263772123456" class="btn btn-outline btn-sm">
               <i class="fas fa-phone"></i> Call
             </a>
-            <a href="https://wa.me/263772123456" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"
-              style="padding:8px 12px;">
-              <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/263772123456" target="_blank" rel="noopener noreferrer" 
+              class="btn btn-whatsapp btn-sm btn-full" aria-label="Contact via WhatsApp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
         </article>
@@ -495,7 +536,7 @@
               <div class="tmeta">
                 <div class="tavatar">TM</div>
                 <div>
-                  <div class="tname">T. Moyo</div>
+                  <div class="tname">T. Moyo – Marondera (Layer Farmer)</div>
                   <div class="tloc">Mashonaland East</div>
                 </div>
               </div>
@@ -511,7 +552,7 @@
               <div class="tmeta">
                 <div class="tavatar">CD</div>
                 <div>
-                  <div class="tname">C. Dube</div>
+                  <div class="tname">C. Dube – Juru (Broiler Farmer)</div>
                   <div class="tloc">Juru / Bhora area</div>
                 </div>
               </div>
@@ -527,7 +568,7 @@
               <div class="tmeta">
                 <div class="tavatar">SN</div>
                 <div>
-                  <div class="tname">S. Ndlovu</div>
+                  <div class="tname">S. Ndlovu – Murehwa (Pig Farmer)</div>
                   <div class="tloc">Murehwa</div>
                 </div>
               </div>
@@ -567,6 +608,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer role="contentinfo" id="contact">
     <div class="container">
@@ -591,7 +634,7 @@
             <li>
               <i class="fas fa-phone"></i>
               <div><strong>Phone</strong><br>
-                <a href="tel:+263780840505" style="color:#ddd;">071 558 2943</a>
+                <a href="tel:+263780840505" style="color:#ddd;">078 084 0505</a>
               </div>
             </li>
             <li>
@@ -627,9 +670,6 @@
   </a>
 
   <script src="js/main.js"></script>
-  <script src="assets/enterprise-motion.js"></script>
-  <script src="assets/retail-micro.js"></script>
-  <script src="assets/luxury-agro.js"></script>
 
 </body>
 

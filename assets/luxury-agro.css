@@ -41,7 +41,9 @@ section {
 header {
     transition: padding 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
 }
-header.shrink {
+header.shrink,
+.site-header.shrink {
+    padding: 6px 0;
     backdrop-filter: blur(14px);
     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
 }

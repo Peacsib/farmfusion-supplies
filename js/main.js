@@ -157,7 +157,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
         const h  = Math.floor(ms / 3600000);
         const m  = Math.floor((ms % 3600000) / 60000);
         promoText.innerHTML =
-            `Order now! Offer ends in <strong>${h}h ${m}m</strong> | Call: 071 558 2943`;
+            `Order now! Offer ends in <strong>${h}h ${m}m</strong> | Call: 078 084 0505`;
     }
     update();
     setInterval(update, 60000);
@@ -181,6 +181,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
 /* ── 7. SCROLL REVEAL ──────────────────────── */
+/* DISABLED: Using Enterprise Motion System instead
 (function initScrollReveal() {
     const els = document.querySelectorAll('.reveal, .testimonial-card');
     if (!('IntersectionObserver' in window)) {
@@ -202,6 +203,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     // Expose globally so dynamically rendered cards (feed stall) can be observed
     window._ffObserve = (el) => obs.observe(el);
 })();
+*/
 
 
 /* ── 8. HERO PARALLAX ──────────────────────── */
