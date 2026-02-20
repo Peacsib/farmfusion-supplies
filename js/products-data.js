@@ -112,7 +112,7 @@ function populateFeedStall() {
 
     const stock = window.FF_STOCK && window.FF_STOCK.Feed;
     if (!stock) {
-        container.innerHTML = '<p style="padding:20px;text-align:center;">Feed products loading…</p>';
+        container.innerHTML = '<p class="feed-loading-state">Feed products loading…</p>'; 
         return;
     }
 

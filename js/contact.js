@@ -2,12 +2,8 @@
 
 /* ─────────────────────────────────────────────
    FarmFusion — contact.js
-   Web3Forms submission with honeypot anti-spam.
+   Submits via Vercel serverless function (/api/contact).
 ───────────────────────────────────────────── */
-
-const CONTACT_EMAIL  = 'info@farmfusion.co.zw';
-const WEB3FORMS_KEY  = 'fb037b02-4641-4427-88d1-d23fcf6dac42';
-const BRAND_NAME     = 'FarmFusion Supplies';
 
 function els() {
     return {
@@ -44,20 +40,16 @@ function toastSuccess() {
     setTimeout(() => pop.classList.remove('show'), 3500);
 }
 
-async function submitToWeb3Forms(form) {
-    const data = new FormData(form);
+async function submitContact(form) {
+    const payload = Object.fromEntries(new FormData(form).entries());
 
-    /* Anti-spam: Web3Forms native botcheck field */
-    data.append('botcheck', '');
-    data.append('access_key',  WEB3FORMS_KEY);
-    data.append('subject',     `${BRAND_NAME} enquiry: ${data.get('interest') || 'General'}`);
-    data.append('from_name',   BRAND_NAME);
-    data.append('redirect',    'false');
-    if (data.get('email')) data.append('replyto', data.get('email'));
+    const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
 
-    const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
     const json = await res.json();
-
     if (!res.ok || !json.success) throw new Error(json.message || 'Submission failed');
     return json;
 }
@@ -79,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             setLoading(true);
             showStatus('Sending…', null);
-            await submitToWeb3Forms(form);
+            await submitContact(form);
             setLoading(false);
             showStatus('Message sent! We\'ll be in touch shortly.', 'ok');
             toastSuccess();

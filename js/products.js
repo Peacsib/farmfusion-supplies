@@ -6,7 +6,7 @@
    sort functional, accordion correct.
 ───────────────────────────────────────────── */
 
-const WHATSAPP = '263715582943';
+const WHATSAPP = window.FF_BUSINESS?.whatsapp?.main || '263715582943';
 
 function parsePrice(text) {
     const val = parseFloat(String(text || '').replace(/[^0-9.]/g, ''));
