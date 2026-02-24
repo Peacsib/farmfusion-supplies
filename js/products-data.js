@@ -82,7 +82,7 @@ function createProductCard(productName, sizes, prices) {
     
     // Create WhatsApp message with all sizes
     const waMessage = `Hello FarmFusion, I want to order: ${productName} (${sizes.join(' or ')})`;
-    const waLink = `https://wa.me/263715582943?text=${encodeURIComponent(waMessage)}`;
+    const waLink = `https://wa.me/263780840505?text=${encodeURIComponent(waMessage)}`;
 
     return `
         <div class="product-card" data-product="${productName}" data-sizes="${sizes.join(',')}" data-price="${displayPrice}">
