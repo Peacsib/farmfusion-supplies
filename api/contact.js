@@ -26,16 +26,17 @@ module.exports = async (req, res) => {
         .map(s => s.trim())
         .filter(Boolean);
 
-    if (process.env.NODE_ENV === 'production' && allowedOrigins.length === 0) {
-        return json(res, 500, { success: false, message: 'Server configuration missing ALLOWED_ORIGINS in production' });
-    }
+    // Only enforce ALLOWED_ORIGINS in production if explicitly set
+    // Allow all origins if ALLOWED_ORIGINS is not configured
+    const isProduction = process.env.NODE_ENV === 'production';
+    const shouldCheckOrigins = isProduction && allowedOrigins.length > 0;
 
     if (!accessKey) {
         return json(res, 500, { success: false, message: 'Server configuration missing WEB3FORMS_KEY' });
     }
 
     const origin = req.headers.origin || '';
-    if (!isAllowedOrigin(origin, allowedOrigins)) {
+    if (shouldCheckOrigins && !isAllowedOrigin(origin, allowedOrigins)) {
         return json(res, 403, { success: false, message: 'Origin not allowed' });
     }
 
