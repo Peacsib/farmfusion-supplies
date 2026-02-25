@@ -1818,12 +1818,16 @@ footer {
     align-items: center;
     gap: 10px;
     z-index: 2000;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .success-popup.show {
     transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .success-popup i {
