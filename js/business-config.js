@@ -18,5 +18,17 @@ window.FF_BUSINESS = Object.freeze({
     email: 'info@farmfusion.co.zw',
     address: {
         headOffice: 'Shop No. 1, AAA Complex at Giant Petroleum, Cross, Harare-Mutoko Highway'
+    },
+    branches: {
+        cross: {
+            name: 'FarmFusion Cross',
+            address: 'Shop No. 1, AAA Complex at Giant Petroleum',
+            mapsLink: 'https://share.google/UEonhrZMyl51LXur0'
+        },
+        juru: {
+            name: 'FarmFusion Juru/Bhora',
+            address: 'Shop No. 3, AAA Complex behind the unfinished Storey Building',
+            mapsLink: 'https://maps.app.goo.gl/87tSYHBuXL7GL4aJA'
+        }
     }
 });

@@ -41,12 +41,16 @@ function toastSuccess() {
 }
 
 async function submitContact(form) {
-    const payload = Object.fromEntries(new FormData(form).entries());
-
-    const res = await fetch('/api/contact', {
+    const formData = new FormData(form);
+    
+    // Add Web3Forms access key directly (client-side is safe for Web3Forms)
+    formData.append('access_key', 'fb037b02-4641-4427-88d1-d23fcf6dac42');
+    formData.append('subject', 'FarmFusion Supplies Enquiry');
+    formData.append('from_name', 'FarmFusion Supplies');
+    
+    const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: formData
     });
 
     const json = await res.json();
@@ -79,7 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             console.error('[Contact]', err);
             setLoading(false);
-            showStatus('Could not send. Please WhatsApp or call us directly.', 'err');
+            
+            // More graceful error message with contact options
+            const phone = '078 084 0505';
+            const whatsapp = '263780840505';
+            showStatus('', 'err');
+            
+            const { status } = els();
+            if (status) {
+                status.innerHTML = `
+                    <div style="text-align: left;">
+                        <strong>Unable to send message at the moment.</strong><br>
+                        <span style="font-size: 0.9em; margin-top: 8px; display: block;">
+                            Please contact us directly:<br>
+                            📞 Call: <a href="tel:+263780840505" style="color: #4CAF50; text-decoration: underline;">${phone}</a><br>
+                            💬 WhatsApp: <a href="https://wa.me/${whatsapp}" target="_blank" style="color: #25D366; text-decoration: underline;">Chat Now</a>
+                        </span>
+                    </div>
+                `;
+                status.className = 'status-pill err show';
+            }
         }
     });
 });

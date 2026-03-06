@@ -6,55 +6,55 @@
 ───────────────────────────────────────────── */
 
 /**
- * Resolve the correct product image based on the product name.
- * Updated with better image mapping for all products.
+ * Resolve the correct product image based on the product name and category.
+ * Updated to work with shortened product names.
  */
-function getImageForProduct(productName) {
+function getImageForProduct(productName, categoryName = '') {
     const n = (productName || '').toLowerCase().trim();
+    const cat = (categoryName || '').toLowerCase().trim();
     const base = 'images/feeds/products/';
 
-    /* ── Road Runner ── */
-    if (n.includes('road runner') || n.includes('road run')) {
-        if (n.includes('starter')) return base + 'roadrunner-set.webp';
-        if (n.includes('grower') || n.includes('finisher')) return base + 'roadrunner-grower.webp';
+    /* ── Road Runner Feed ── */
+    if (cat.includes('road runner')) {
+        if (n.includes('starter') || n.includes('chicks')) return base + 'roadrunner-set.webp';
+        if (n.includes('grower')) return base + 'roadrunner-grower.webp';
         if (n.includes('breeder') || n.includes('layer')) return base + 'roadrunner-pellets.webp';
         return base + 'roadrunner-pellets.webp';
     }
 
-    /* ── Rabbit ── */
-    if (n.includes('rabbit')) {
+    /* ── Rabbit Feed ── */
+    if (cat.includes('rabbit')) {
         if (n.includes('starter')) return base + 'rabbit-starter.webp';
         if (n.includes('grower')) return base + 'rabbit-grower.webp';
         return base + 'rabbit-pellets.webp';
     }
 
-    /* ── Pig: sub-type aware ── */
-    if (n.includes('pig')) {
+    /* ── Pig Feed ── */
+    if (cat.includes('pig')) {
         if (n.includes('weaner') || n.includes('creep')) return base + 'pig-starter-creep.webp';
         if (n.includes('finisher')) return base + 'pig-finisher.webp';
         return base + 'pig-grower.webp';
     }
 
-    /* ── Broiler ── */
-    if (n.includes('broiler') || n.startsWith('br ')) {
+    /* ── Broiler Feed ── */
+    if (cat.includes('broiler')) {
         if (n.includes('starter') || n.includes('stargrow')) return base + 'broiler-starter.webp';
-        if (n.includes('finisher') || n.includes('grow-fin')) return base + 'broiler-finisher.webp';
+        if (n.includes('finisher') || n.includes('growfin')) return base + 'broiler-finisher.webp';
         if (n.includes('grower')) return base + 'broiler-grower.webp';
         if (n.includes('crumb')) return base + 'broiler-starter-crumble.webp';
         return base + 'broiler-range.webp';
     }
 
-    /* ── Layers ── */
-    if (n.includes('layer') || n.includes('chick starter') ||
-        n.includes('pre-lay') || n.includes('developer')) {
-        if (n.includes('starter') || n.includes('chick')) return base + 'layer-starter-crumble.webp';
+    /* ── Layers Feed ── */
+    if (cat.includes('layer')) {
+        if (n.includes('starter') || n.includes('pullet starter')) return base + 'layer-starter-crumble.webp';
         if (n.includes('breeder')) return base + 'layer-breeder.webp';
         if (n.includes('mash')) return base + 'layer-mash.webp';
         return base + 'layer-pellets.webp';
     }
 
-    /* ── Goat ── */
-    if (n.includes('goat')) return base + 'pig-grower.webp';
+    /* ── Goat Feed ── */
+    if (cat.includes('goat')) return base + 'goat-feed.webp';
 
     /* ── Fallback ── */
     return base + 'broiler-range.webp';
@@ -63,8 +63,8 @@ function getImageForProduct(productName) {
 /**
  * Build a single product card HTML string with consolidated sizes.
  */
-function createProductCard(productName, sizes, prices) {
-    const imgSrc = getImageForProduct(productName);
+function createProductCard(productName, sizes, prices, categoryName = '') {
+    const imgSrc = getImageForProduct(productName, categoryName);
     const safeId = productName.replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase();
     
     // Create size display text
@@ -150,7 +150,7 @@ function populateFeedStall() {
         products.forEach(product => {
             if (!product.sizes || !Array.isArray(product.sizes)) return;
             // Create ONE card per product with all sizes consolidated
-            grid.innerHTML += createProductCard(product.name, product.sizes, product.prices || {});
+            grid.innerHTML += createProductCard(product.name, product.sizes, product.prices || {}, subcatName);
         });
 
         container.appendChild(grid);
